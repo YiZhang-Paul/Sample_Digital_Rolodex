@@ -1,60 +1,119 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DigitalRolodexClassLibrary;
+using Moq;
 
 namespace DigitalRolodexTests {
     [TestClass]
     public class RolodexValidatorTest {
 
-        RolodexValidator validator;
+        Mock<IPhoneNumberValidator> phoneNumberValidator;
+        RolodexValidator rolodexValidator;
 
         [TestInitialize]
         public void Setup() {
 
-            validator = new RolodexValidator();
+            phoneNumberValidator = new Mock<IPhoneNumberValidator>();
+            rolodexValidator = new RolodexValidator(phoneNumberValidator.Object);
         }
 
         [TestMethod]
         public void EmptyName() {
 
-            Assert.IsFalse(validator.IsValidName(""));
-            Assert.IsFalse(validator.IsValidName("".PadLeft(5, " "[0])));
+            Assert.IsFalse(rolodexValidator.IsValidName(""));
+            Assert.IsFalse(rolodexValidator.IsValidName("".PadLeft(5, " "[0])));
         }
 
         [TestMethod]
         public void NameWithDigit() {
 
-            Assert.IsFalse(validator.IsValidName("John Do5"));
-            Assert.IsFalse(validator.IsValidName("5 52"));
-            Assert.IsFalse(validator.IsValidName("Jane1e"));
+            Assert.IsFalse(rolodexValidator.IsValidName("John Do5"));
+            Assert.IsFalse(rolodexValidator.IsValidName("5 52"));
+            Assert.IsFalse(rolodexValidator.IsValidName("Jane1e"));
         }
 
         [TestMethod]
         public void NameWithOneCharacter() {
 
-            Assert.IsFalse(validator.IsValidName("J"));
+            Assert.IsFalse(rolodexValidator.IsValidName("J"));
         }
 
         [TestMethod]
         public void NameWithMoreThanTwentyFiveCharacter() {
 
-            Assert.IsFalse(validator.IsValidName("J".PadLeft(26, 'J')));
+            Assert.IsFalse(rolodexValidator.IsValidName("".PadLeft(26, 'J')));
         }
 
         [TestMethod]
         public void NameWithSpecialCharacters() {
 
-            Assert.IsFalse(validator.IsValidName("Doe *Ann"));
-            Assert.IsFalse(validator.IsValidName("Jos&h"));
-            Assert.IsFalse(validator.IsValidName("#$ !"));
+            Assert.IsFalse(rolodexValidator.IsValidName("Doe *Ann"));
+            Assert.IsFalse(rolodexValidator.IsValidName("Jos&h"));
+            Assert.IsFalse(rolodexValidator.IsValidName("#$ !"));
         }
 
         [TestMethod]
         public void ValidClientName() {
 
-            Assert.IsTrue(validator.IsValidName("John Doe"));
-            Assert.IsTrue(validator.IsValidName("Ji"));
-            Assert.IsTrue(validator.IsValidName("Ronnie O'Sullivan"));
+            Assert.IsTrue(rolodexValidator.IsValidName("John Doe"));
+            Assert.IsTrue(rolodexValidator.IsValidName("Ji"));
+            Assert.IsTrue(rolodexValidator.IsValidName("Ronnie O'Sullivan"));
+        }
+
+        [TestMethod]
+        public void EmptyPhoneNumber() {
+
+            Assert.IsFalse(rolodexValidator.IsValidPhoneNumber(""));
+            Assert.IsFalse(rolodexValidator.IsValidPhoneNumber("".PadLeft(5, " "[0])));
+        }
+
+        [TestMethod]
+        public void InvalidPhoneNumber() {
+
+            phoneNumberValidator.Setup(mock => mock.IsValidPhoneNumber(It.IsAny<string>()))
+                                .Returns(false);
+
+            Assert.IsFalse(rolodexValidator.IsValidPhoneNumber("HJ2042990292"));
+        }
+
+        [TestMethod]
+        public void ValidPhoneNumber() {
+
+            phoneNumberValidator.Setup(mock => mock.IsValidPhoneNumber(It.IsAny<string>()))
+                                .Returns(true);
+
+            Assert.IsTrue(rolodexValidator.IsValidPhoneNumber("(647)299-0292"));
+        }
+
+        [TestMethod]
+        public void EmptyAddress() {
+
+            Assert.IsFalse(rolodexValidator.IsValidAddress(""));
+            Assert.IsFalse(rolodexValidator.IsValidAddress("".PadLeft(20, " "[0])));
+        }
+
+        [TestMethod]
+        public void AddressLengthLessThanSixCharacters() {
+
+            Assert.IsFalse(rolodexValidator.IsValidAddress("Zoo"));
+        }
+
+        [TestMethod]
+        public void AddressLengthMoreThanFiftyCharacters() {
+
+            Assert.IsFalse(rolodexValidator.IsValidAddress("".PadLeft(51, 'A')));
+        }
+
+        [TestMethod]
+        public void AddressWithSpecialCharacters() {
+
+            Assert.IsFalse(rolodexValidator.IsValidAddress("3!@30*4 !#$Is^sac Dr."));
+        }
+
+        [TestMethod]
+        public void ValidAddress() {
+
+            Assert.IsTrue(rolodexValidator.IsValidAddress("3304 Issac Dr."));
         }
     }
 }
