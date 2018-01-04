@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRolodexTest", "DigitalRolodexTest\DigitalRolodexTest.csproj", "{E30694A9-FA48-4765-A8E8-0DC0CF149928}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRolodexTests", "DigitalRolodexTests\DigitalRolodexTests.csproj", "{9D2E29C0-6725-4403-A686-3B788EAF3FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRolodexClassLibrary", "DigitalRolodexClassLibrary\DigitalRolodexClassLibrary.csproj", "{B528FE20-4088-4932-9DF4-C119C2965259}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E30694A9-FA48-4765-A8E8-0DC0CF149928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E30694A9-FA48-4765-A8E8-0DC0CF149928}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E30694A9-FA48-4765-A8E8-0DC0CF149928}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E30694A9-FA48-4765-A8E8-0DC0CF149928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D2E29C0-6725-4403-A686-3B788EAF3FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D2E29C0-6725-4403-A686-3B788EAF3FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D2E29C0-6725-4403-A686-3B788EAF3FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D2E29C0-6725-4403-A686-3B788EAF3FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B528FE20-4088-4932-9DF4-C119C2965259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B528FE20-4088-4932-9DF4-C119C2965259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B528FE20-4088-4932-9DF4-C119C2965259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B528FE20-4088-4932-9DF4-C119C2965259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,14 @@
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\DigitalRolodexTests.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\DigitalRolodexTests.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\Castle.Core.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\DigitalRolodexClassLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\Moq.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\DigitalRolodexClassLibrary.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\Castle.Core.xml
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\Moq.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\Moq.xml
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\obj\Debug\DigitalRolodexTests.csprojResolveAssemblyReference.cache
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\obj\Debug\DigitalRolodexTests.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\obj\Debug\DigitalRolodexTests.pdb

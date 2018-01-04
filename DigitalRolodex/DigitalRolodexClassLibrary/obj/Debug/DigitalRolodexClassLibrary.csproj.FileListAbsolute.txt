@@ -1,0 +1,5 @@
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\bin\Debug\DigitalRolodexClassLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\bin\Debug\DigitalRolodexClassLibrary.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.csprojResolveAssemblyReference.cache
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.pdb
