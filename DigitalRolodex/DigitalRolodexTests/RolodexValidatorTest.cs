@@ -115,5 +115,33 @@ namespace DigitalRolodexTests {
 
             Assert.IsTrue(rolodexValidator.IsValidAddress("3304 Issac Dr."));
         }
+
+        [TestMethod]
+        public void EmailLessThanSixCharacters() {
+
+            Assert.IsFalse(rolodexValidator.IsValidEmail("x@x.c"));
+        }
+
+        [TestMethod]
+        public void EmailMoreThanFortyCharacters() {
+
+            Assert.IsFalse(rolodexValidator.IsValidEmail("".PadLeft(37, 'x') + "@x.com"));
+        }
+
+        [TestMethod]
+        public void InvalidEmailFormat() {
+
+            Assert.IsFalse(rolodexValidator.IsValidEmail("xx x@ x.com"));
+            Assert.IsFalse(rolodexValidator.IsValidEmail("xxx@xcom"));
+            Assert.IsFalse(rolodexValidator.IsValidEmail("xxx~xx.com"));
+        }
+
+        [TestMethod]
+        public void ValidEmail() {
+
+            Assert.IsTrue(rolodexValidator.IsValidEmail("name1234@example.com"));
+            Assert.IsTrue(rolodexValidator.IsValidEmail("xx_x@example.org"));
+            Assert.IsTrue(rolodexValidator.IsValidEmail("xxxxx@xx.com"));
+        }
     }
 }

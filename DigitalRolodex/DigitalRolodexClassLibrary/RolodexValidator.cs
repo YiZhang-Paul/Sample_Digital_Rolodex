@@ -37,9 +37,21 @@ namespace DigitalRolodexClassLibrary {
             return PhoneNumberValidator.IsValidPhoneNumber(phoneNumber);
         }
 
+        private bool IsValidEmailFormat(string email) {
+
+            return Regex.IsMatch(email, @"^\w+@\w+\.(com|org)$");
+        }
+
+        private bool IsValidEmailLength(string email) {
+
+            return email.Length >= 6 && email.Length <= 40;
+        }
+
         public bool IsValidEmail(string email) {
 
-            return true;
+            email = email.Trim();
+
+            return IsValidEmailFormat(email) && IsValidEmailLength(email);
         }
 
         private bool IsValidAddressLength(string address) {
