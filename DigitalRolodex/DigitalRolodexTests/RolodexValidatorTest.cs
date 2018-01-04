@@ -40,5 +40,21 @@ namespace DigitalRolodexTests {
 
             Assert.IsFalse(validator.IsValidName("J".PadLeft(26, 'J')));
         }
+
+        [TestMethod]
+        public void NameWithSpecialCharacters() {
+
+            Assert.IsFalse(validator.IsValidName("Doe *Ann"));
+            Assert.IsFalse(validator.IsValidName("Jos&h"));
+            Assert.IsFalse(validator.IsValidName("#$ !"));
+        }
+
+        [TestMethod]
+        public void ValidClientName() {
+
+            Assert.IsTrue(validator.IsValidName("John Doe"));
+            Assert.IsTrue(validator.IsValidName("Ji"));
+            Assert.IsTrue(validator.IsValidName("Ronnie O'Sullivan"));
+        }
     }
 }
