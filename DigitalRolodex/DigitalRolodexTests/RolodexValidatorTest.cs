@@ -15,7 +15,7 @@ namespace DigitalRolodexTests {
         }
 
         [TestMethod]
-        public void NameIsEmpty() {
+        public void EmptyName() {
 
             Assert.IsFalse(validator.IsValidName(""));
             Assert.IsFalse(validator.IsValidName("".PadLeft(5, " "[0])));

@@ -24,17 +24,5 @@ namespace DigitalRolodexClassLibrary {
 
             return IsValidNameLength(name) && IsLegalCharacter(name);
         }
-
-        public bool IsValidPhoneNumber(string phone) {
-
-            string digits = Regex.Replace(phone.Trim(), @"\D", "");
-
-            if(digits.Length != 10) {
-
-                return false;
-            }
-
-            return true;
-        }
     }
 }

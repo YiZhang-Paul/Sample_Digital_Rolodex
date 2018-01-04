@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace DigitalRolodexClassLibrary {
     public class PhoneNumberValidator {
@@ -29,9 +30,31 @@ namespace DigitalRolodexClassLibrary {
             }
         }
 
+        public bool IsValidAreaCode(string areaCode) {
+
+            return AreaCodes.Contains(areaCode);
+        }
+
+        private string GetDigits(string phoneNumber) {
+
+            return Regex.Replace(phoneNumber.Trim(), @"\D", "");
+        }
+
+        private bool HasLetters(string phoneNumber) {
+
+            return Regex.IsMatch(phoneNumber, "[A-z]");
+        }
+
         public bool IsValidPhoneNumber(string phoneNumber) {
 
-            return false;
+            string digits = GetDigits(phoneNumber);
+
+            if(digits.Length != 10 || HasLetters(phoneNumber)) {
+
+                return false;
+            }
+
+            return IsValidAreaCode(digits.Substring(0, 3));
         }
     }
 }
