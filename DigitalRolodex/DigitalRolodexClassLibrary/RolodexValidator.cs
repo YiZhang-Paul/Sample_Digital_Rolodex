@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace DigitalRolodexClassLibrary {
     public class RolodexValidator : IRolodexValidator {
 
-        private bool IsValidLength(string name) {
+        private bool IsValidNameLength(string name) {
 
             return name.Length >= 2 && name.Length <= 25;
         }
@@ -22,7 +22,19 @@ namespace DigitalRolodexClassLibrary {
 
             name = name.Trim().ToLower();
 
-            return IsValidLength(name) && IsLegalCharacter(name);
+            return IsValidNameLength(name) && IsLegalCharacter(name);
+        }
+
+        public bool IsValidPhoneNumber(string phone) {
+
+            string digits = Regex.Replace(phone.Trim(), @"\D", "");
+
+            if(digits.Length != 10) {
+
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -12,3 +12,4 @@ D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\System.Threading.Tasks.E
 D:\rolodex\DigitalRolodex\DigitalRolodexTests\obj\Debug\DigitalRolodexTests.csprojResolveAssemblyReference.cache
 D:\rolodex\DigitalRolodex\DigitalRolodexTests\obj\Debug\DigitalRolodexTests.dll
 D:\rolodex\DigitalRolodex\DigitalRolodexTests\obj\Debug\DigitalRolodexTests.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\areaCode.txt

@@ -39,9 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPhoneNumberValidator.cs" />
     <Compile Include="IRolodexValidator.cs" />
+    <Compile Include="PhoneNumberValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolodexValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="areaCode.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
