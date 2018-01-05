@@ -1,0 +1,11 @@
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\bin\Debug\DigitalRolodexControlLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\bin\Debug\DigitalRolodexControlLibrary.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.NewContactPanel.resources
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.Properties.Resources.resources
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.csproj.GenerateResource.Cache
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.ViewContactPanel.resources
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.csprojResolveAssemblyReference.cache
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.SearchBox.resources
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.Sidebar.resources

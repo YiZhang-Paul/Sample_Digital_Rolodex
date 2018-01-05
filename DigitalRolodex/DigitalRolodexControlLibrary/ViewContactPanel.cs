@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DigitalRolodexControlLibrary {
+    public partial class ViewContactPanel : UserControl {
+
+        public delegate void ContactUpdatingHandler(object sender, EventArgs e);
+        public delegate void ContactDeletingHandler(object sender, EventArgs e);
+
+        public event ContactUpdatingHandler OnContactUpdating;
+        public event ContactDeletingHandler OnContactDeleting;
+
+        private bool EditPanelOn { get; set; }
+        
+        public ViewContactPanel() {
+
+            InitializeComponent();
+            CollapseEditPanel();
+        }
+
+        public void CollapseEditPanel() {
+
+            EditContactPanel.Height = 0;
+        }
+
+        public void ExpandEditPanel() {
+
+            EditContactPanel.Height = (int)(this.Height * 0.2);
+        }
+
+        #region Button Event Listeners
+        private void UpdateButtonClick(object sender, EventArgs e) {
+
+            OnContactUpdating(sender, e);
+        }
+
+        private void DeleteButtonClick(object sender, EventArgs e) {
+
+            OnContactDeleting(sender, e);
+        }
+
+        private void ButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void ButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlText;
+        }
+
+        private void ButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
+        }
+
+        private void ButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+        #endregion
+    }
+}
