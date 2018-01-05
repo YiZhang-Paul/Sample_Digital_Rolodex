@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DigitalRolodex {
-    public partial class DigitalRolodex : Form {
+    public partial class MainForm : Form {
 
         private Point MouseXY { get; set; }
         private bool SidebarExpanded { get; set; }
@@ -23,7 +23,7 @@ namespace DigitalRolodex {
             }
         }
 
-        public DigitalRolodex() {
+        public MainForm() {
 
             InitializeComponent();
             SidebarExpanded = true;
@@ -171,6 +171,47 @@ namespace DigitalRolodex {
 
             UpdateOptionButtonAppearance((Button)sender);
             ShowPanel(ViewContactPanel);
+        }
+
+        private void AddContactButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_darkpink;
+        }
+
+        private void AddContactButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightpink;
+        }
+
+        private void AddContactButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightgreen;
+        }
+
+        private void AddContactButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_darkpink;
+        }
+
+        private void ResetInputButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
+        }
+
+        private void ResetInputButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightskyblue;
+        }
+        
+
+        private void ResetInputButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightgreen;
+        }
+
+        private void ResetInputButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
         }
 
         private void MinimizeClick(object sender, EventArgs e) {

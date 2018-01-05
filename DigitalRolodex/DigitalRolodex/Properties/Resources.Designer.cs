@@ -73,6 +73,16 @@ namespace DigitalRolodex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_contact_button {
+            get {
+                object obj = ResourceManager.GetObject("add_contact_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_icon {
             get {
                 object obj = ResourceManager.GetObject("logo_icon", resourceCulture);
@@ -86,6 +96,66 @@ namespace DigitalRolodex.Properties {
         internal static System.Drawing.Bitmap menu_toggle {
             get {
                 object obj = ResourceManager.GetObject("menu_toggle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reset_contact_button {
+            get {
+                object obj = ResourceManager.GetObject("reset_contact_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_button_blue {
+            get {
+                object obj = ResourceManager.GetObject("round_button_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_button_darkpink {
+            get {
+                object obj = ResourceManager.GetObject("round_button_darkpink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_button_lightgreen {
+            get {
+                object obj = ResourceManager.GetObject("round_button_lightgreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_button_lightpink {
+            get {
+                object obj = ResourceManager.GetObject("round_button_lightpink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_button_lightskyblue {
+            get {
+                object obj = ResourceManager.GetObject("round_button_lightskyblue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
