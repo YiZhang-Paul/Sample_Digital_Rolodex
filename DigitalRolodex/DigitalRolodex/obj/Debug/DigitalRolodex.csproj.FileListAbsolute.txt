@@ -7,3 +7,5 @@ D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.exe
 D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.pdb
 D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.MainForm.resources
 D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.Properties.Resources.resources
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodexControlLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodexControlLibrary.pdb

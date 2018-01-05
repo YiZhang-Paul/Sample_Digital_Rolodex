@@ -113,7 +113,15 @@ namespace DigitalRolodex {
             Sidebar.Width = Sidebar.Width * 3;
         }
 
-        private void ShowPanel(Panel panel) {
+        private void ToggleSidebar() {
+
+            if(SidebarExpanded) CollapseSidebar();
+            else ExpandSidebar();
+
+            SidebarExpanded = !SidebarExpanded;
+        }
+
+        private void ShowPanel(UserControl panel) {
 
             panel.Visible = true;
             panel.BringToFront();
@@ -176,12 +184,9 @@ namespace DigitalRolodex {
             WindowState = Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
         }
 
-        private void ToggleSidebar(object sender, EventArgs e) {
+        private void ToggleSidebarButtonClick(object sender, EventArgs e) {
 
-            if(SidebarExpanded) CollapseSidebar();
-            else ExpandSidebar();
-
-            SidebarExpanded = !SidebarExpanded;
+            ToggleSidebar();
         }
 
         private void DrawActiveIndicator(object sender, PaintEventArgs e) {
@@ -202,48 +207,7 @@ namespace DigitalRolodex {
         private void ViewContactButtonClick(object sender, EventArgs e) {
 
             UpdateOptionButtonAppearance((Button)sender);
-            ShowPanel(ViewContactPanel);
-        }
-
-        private void AddContactButtonMouseEnter(object sender, EventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_darkpink;
-        }
-
-        private void AddContactButtonMouseLeave(object sender, EventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightpink;
-        }
-
-        private void AddContactButtonMouseDown(object sender, MouseEventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightgreen;
-        }
-
-        private void AddContactButtonMouseUp(object sender, MouseEventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_darkpink;
-        }
-
-        private void ResetInputButtonMouseEnter(object sender, EventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
-        }
-
-        private void ResetInputButtonMouseLeave(object sender, EventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightskyblue;
-        }
-        
-
-        private void ResetInputButtonMouseDown(object sender, MouseEventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightgreen;
-        }
-
-        private void ResetInputButtonMouseUp(object sender, MouseEventArgs e) {
-
-            ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
+            //ShowPanel(ViewContactPanel);
         }
 
         private void UpdateButtonMouseEnter(object sender, EventArgs e) {
@@ -286,16 +250,6 @@ namespace DigitalRolodex {
             ((Button)sender).ForeColor = Color.Red;
         }
 
-        private void MinimizeClick(object sender, EventArgs e) {
-
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void ExitClick(object sender, EventArgs e) {
-
-            Application.Exit();
-        }
-
         private void SearchBoxEnter(object sender, EventArgs e) {
 
             SearchIconBox.Visible = false;
@@ -316,6 +270,16 @@ namespace DigitalRolodex {
             searchBox.ForeColor = SystemColors.ControlDarkDark;
             searchBox.BackColor = Color.DarkGray;
             RemoveIcon(searchBox);
+        }
+
+        private void MinimizeClick(object sender, EventArgs e) {
+
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void ExitClick(object sender, EventArgs e) {
+
+            Application.Exit();
         }
     }
 }
