@@ -118,6 +118,27 @@ namespace DigitalRolodex {
             panel.Visible = true;
             panel.BringToFront();
         }
+
+        private void AddIcon(TextBox searchBox, Image image) {
+
+            var icon = new Label();
+            icon.Image = image;
+            icon.AutoSize = false;
+            icon.Size = icon.Image.Size;
+            icon.ImageAlign = ContentAlignment.MiddleCenter;
+            icon.Text = "";
+            icon.BackColor = Color.Transparent;
+            icon.Parent = searchBox;
+            icon.Location = new Point(searchBox.ClientSize.Width - icon.Image.Width, 0);
+        }
+
+        private void RemoveIcon(TextBox searchBox) {
+
+            foreach(Label icon in searchBox.Controls.OfType<Label>()) {
+
+                icon.Dispose();
+            }
+        }
         /**
          * event listeners
          */
@@ -273,6 +294,28 @@ namespace DigitalRolodex {
         private void ExitClick(object sender, EventArgs e) {
 
             Application.Exit();
+        }
+
+        private void SearchBoxEnter(object sender, EventArgs e) {
+
+            SearchIconBox.Visible = false;
+            var searchBox = (TextBox)sender;
+            searchBox.Width *= 2;
+            searchBox.Text = string.Empty;
+            searchBox.ForeColor = SystemColors.ControlText;
+            searchBox.BackColor = SystemColors.ControlDarkDark;
+            AddIcon(searchBox, Properties.Resources.search);
+        }
+
+        private void SearchBoxLeave(object sender, EventArgs e) {
+
+            SearchIconBox.Visible = true;
+            var searchBox = (TextBox)sender;
+            searchBox.Width /= 2;
+            searchBox.Text = "search contact name...";
+            searchBox.ForeColor = SystemColors.ControlDarkDark;
+            searchBox.BackColor = Color.DarkGray;
+            RemoveIcon(searchBox);
         }
     }
 }

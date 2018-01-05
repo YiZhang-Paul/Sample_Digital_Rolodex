@@ -241,8 +241,8 @@
             // SearchIconBox
             // 
             this.SearchIconBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SearchIconBox.Image = global::DigitalRolodex.Properties.Resources.search;
-            this.SearchIconBox.Location = new System.Drawing.Point(163, 20);
+            this.SearchIconBox.Image = ((System.Drawing.Image)(resources.GetObject("SearchIconBox.Image")));
+            this.SearchIconBox.Location = new System.Drawing.Point(211, 20);
             this.SearchIconBox.Name = "SearchIconBox";
             this.SearchIconBox.Size = new System.Drawing.Size(26, 24);
             this.SearchIconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -252,11 +252,16 @@
             // SearchBox
             // 
             this.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.SearchBox.BackColor = System.Drawing.Color.DarkGray;
             this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.SearchBox.Location = new System.Drawing.Point(50, 20);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(112, 25);
+            this.SearchBox.Size = new System.Drawing.Size(161, 25);
             this.SearchBox.TabIndex = 3;
+            this.SearchBox.Text = "search contact name...";
+            this.SearchBox.Enter += new System.EventHandler(this.SearchBoxEnter);
+            this.SearchBox.Leave += new System.EventHandler(this.SearchBoxLeave);
             // 
             // ControlButtonLayout
             // 

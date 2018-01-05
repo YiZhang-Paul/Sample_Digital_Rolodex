@@ -127,8 +127,8 @@
   <data name="round_button_darkpink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_darkpink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="round_corner_button_gradient_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\round_corner_button_gradient_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="view_contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view_contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,11 +142,11 @@
   <data name="logo_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="menu_toggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu_toggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="round_button_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\round_button_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="round_button_lightpink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_lightpink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,10 +157,10 @@
   <data name="round_button_lightskyblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_lightskyblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_button_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\round_button_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_corner_button_gradient_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\round_corner_button_gradient_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
