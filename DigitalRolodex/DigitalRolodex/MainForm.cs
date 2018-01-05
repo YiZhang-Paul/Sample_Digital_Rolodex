@@ -12,14 +12,7 @@ namespace DigitalRolodex {
     public partial class MainForm : Form {
 
         private Point MouseXY { get; set; }
-
-        private bool Maximized {
-
-            get {
-
-                return WindowState == FormWindowState.Maximized;
-            }
-        }
+        private bool Maximized { get { return WindowState == FormWindowState.Maximized; } }
 
         public MainForm() {
 
@@ -31,9 +24,24 @@ namespace DigitalRolodex {
             panel.Visible = true;
             panel.BringToFront();
         }
-        /**
-         * event listeners
-         */
+
+        #region Event Listeners
+        private void SidebarOnOptionSelected(object sender, EventArgs e) {
+
+            switch(((Button)sender).Tag.ToString()) {
+            
+                case "newContact" :
+
+                    ShowPanel(NewContactPanel);
+                    break;
+
+                case "viewContact" :
+
+                    ShowPanel(ViewContactPanel);
+                    break;
+            }
+        }
+
         private void GetMouseXY(object sender, MouseEventArgs e) {
 
             MouseXY = e.Location;
@@ -48,34 +56,35 @@ namespace DigitalRolodex {
             }
         }
 
-        private void MinimizeButtonEnter(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = SystemColors.ControlDarkDark;
-        }
-
-        private void ExitButtonEnter(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = Color.FromArgb(204, 44, 68);
-        }
-
-        private void ButtonLeave(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = SystemColors.ControlDark;
-        }
-
         private void ToggleWindowSize(object sender, EventArgs e) {
 
             WindowState = Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
         }
 
-        private void MinimizeClick(object sender, EventArgs e) {
+        private void MinimizeButtonClick(object sender, EventArgs e) {
 
             WindowState = FormWindowState.Minimized;
         }
 
-        private void ExitClick(object sender, EventArgs e) {
+        private void MinimizeButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlDarkDark;
+        }
+
+        private void ExitButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = Color.FromArgb(204, 44, 68);
+        }
+
+        private void ButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlDark;
+        }
+
+        private void ExitButtonClick(object sender, EventArgs e) {
 
             Application.Exit();
         }
+        #endregion
     }
 }

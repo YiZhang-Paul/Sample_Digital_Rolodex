@@ -26,9 +26,9 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.SidebarLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarButtonLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.LogoPanel = new System.Windows.Forms.Panel();
             this.ViewContactButton = new System.Windows.Forms.Button();
             this.NewContactButton = new System.Windows.Forms.Button();
+            this.LogoPanel = new System.Windows.Forms.Panel();
             this.ToggleSidebarButton = new System.Windows.Forms.Button();
             this.LogoBox = new System.Windows.Forms.PictureBox();
             this.MainPanel.SuspendLayout();
@@ -85,18 +85,6 @@
             this.SidebarButtonLayout.Size = new System.Drawing.Size(162, 95);
             this.SidebarButtonLayout.TabIndex = 0;
             // 
-            // LogoPanel
-            // 
-            this.LogoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
-            this.LogoPanel.Controls.Add(this.ToggleSidebarButton);
-            this.LogoPanel.Controls.Add(this.LogoBox);
-            this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoPanel.Location = new System.Drawing.Point(0, 0);
-            this.LogoPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(162, 61);
-            this.LogoPanel.TabIndex = 2;
-            // 
             // ViewContactButton
             // 
             this.ViewContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,6 +101,7 @@
             this.ViewContactButton.Name = "ViewContactButton";
             this.ViewContactButton.Size = new System.Drawing.Size(162, 48);
             this.ViewContactButton.TabIndex = 1;
+            this.ViewContactButton.Tag = "viewContact";
             this.ViewContactButton.Text = "   View Contact";
             this.ViewContactButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ViewContactButton.UseVisualStyleBackColor = true;
@@ -135,10 +124,23 @@
             this.NewContactButton.Name = "NewContactButton";
             this.NewContactButton.Size = new System.Drawing.Size(162, 47);
             this.NewContactButton.TabIndex = 0;
+            this.NewContactButton.Tag = "newContact";
             this.NewContactButton.Text = "   New Contact";
             this.NewContactButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.NewContactButton.UseVisualStyleBackColor = true;
             this.NewContactButton.Click += new System.EventHandler(this.NewContactButtonClick);
+            // 
+            // LogoPanel
+            // 
+            this.LogoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
+            this.LogoPanel.Controls.Add(this.ToggleSidebarButton);
+            this.LogoPanel.Controls.Add(this.LogoBox);
+            this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoPanel.Location = new System.Drawing.Point(0, 0);
+            this.LogoPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.LogoPanel.Name = "LogoPanel";
+            this.LogoPanel.Size = new System.Drawing.Size(162, 61);
+            this.LogoPanel.TabIndex = 2;
             // 
             // ToggleSidebarButton
             // 

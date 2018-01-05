@@ -24,14 +24,14 @@
         /// </summary>
         private void InitializeComponent() {
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.SearchBox = new DigitalRolodexControlLibrary.SearchBox();
             this.ControlButtonLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.UIPanel = new System.Windows.Forms.Panel();
             this.Sidebar = new DigitalRolodexControlLibrary.Sidebar();
+            this.UIPanel = new System.Windows.Forms.Panel();
             this.NewContactPanel = new DigitalRolodexControlLibrary.NewContactPanel();
-            this.SearchBox = new DigitalRolodexControlLibrary.SearchBox();
             this.ViewContactPanel = new DigitalRolodexControlLibrary.ViewContactPanel();
             this.TopPanel.SuspendLayout();
             this.ControlButtonLayout.SuspendLayout();
@@ -53,6 +53,16 @@
             this.TopPanel.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
+            this.SearchBox.Location = new System.Drawing.Point(48, 20);
+            this.SearchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(187, 25);
+            this.SearchBox.TabIndex = 3;
             // 
             // ControlButtonLayout
             // 
@@ -92,9 +102,9 @@
             this.ExitButton.TabIndex = 4;
             this.ExitButton.Text = "✕";
             this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitClick);
-            this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButtonEnter);
-            this.ExitButton.MouseLeave += new System.EventHandler(this.ButtonLeave);
+            this.ExitButton.Click += new System.EventHandler(this.ExitButtonClick);
+            this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButtonMouseEnter);
+            this.ExitButton.MouseLeave += new System.EventHandler(this.ButtonMouseLeave);
             // 
             // MinimizeButton
             // 
@@ -112,9 +122,9 @@
             this.MinimizeButton.TabIndex = 8;
             this.MinimizeButton.Text = "➖";
             this.MinimizeButton.UseVisualStyleBackColor = true;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeClick);
-            this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButtonEnter);
-            this.MinimizeButton.MouseLeave += new System.EventHandler(this.ButtonLeave);
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButtonClick);
+            this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButtonMouseEnter);
+            this.MinimizeButton.MouseLeave += new System.EventHandler(this.ButtonMouseLeave);
             // 
             // MainLayout
             // 
@@ -132,6 +142,17 @@
             this.MainLayout.Size = new System.Drawing.Size(701, 476);
             this.MainLayout.TabIndex = 5;
             // 
+            // Sidebar
+            // 
+            this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.Sidebar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sidebar.Location = new System.Drawing.Point(0, 0);
+            this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
+            this.Sidebar.Name = "Sidebar";
+            this.Sidebar.Size = new System.Drawing.Size(161, 476);
+            this.Sidebar.TabIndex = 4;
+            this.Sidebar.OnOptionSelected += new DigitalRolodexControlLibrary.Sidebar.OptionSelectedHandler(this.SidebarOnOptionSelected);
+            // 
             // UIPanel
             // 
             this.UIPanel.Controls.Add(this.NewContactPanel);
@@ -143,16 +164,6 @@
             this.UIPanel.Name = "UIPanel";
             this.UIPanel.Size = new System.Drawing.Size(540, 476);
             this.UIPanel.TabIndex = 5;
-            // 
-            // Sidebar
-            // 
-            this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            this.Sidebar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sidebar.Location = new System.Drawing.Point(0, 0);
-            this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
-            this.Sidebar.Name = "Sidebar";
-            this.Sidebar.Size = new System.Drawing.Size(161, 476);
-            this.Sidebar.TabIndex = 4;
             // 
             // NewContactPanel
             // 
@@ -166,16 +177,6 @@
             this.NewContactPanel.Size = new System.Drawing.Size(540, 415);
             this.NewContactPanel.TabIndex = 3;
             this.NewContactPanel.Visible = false;
-            // 
-            // SearchBox
-            // 
-            this.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
-            this.SearchBox.Location = new System.Drawing.Point(48, 20);
-            this.SearchBox.Margin = new System.Windows.Forms.Padding(0);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(187, 25);
-            this.SearchBox.TabIndex = 3;
             // 
             // ViewContactPanel
             // 
