@@ -32,12 +32,12 @@ namespace DigitalRolodex {
 
         private void CollapseEditPanel() {
 
-            EditContactPanel.Height = 0;
+            //EditContactPanel.Height = 0;
         }
 
         private void ExpandEditPanel() {
 
-            EditContactPanel.Height = (int)(Parent.Height * 0.15);
+            //EditContactPanel.Height = (int)(Parent.Height * 0.15);
         }
 
         private void SetButtonBackColor(Button button, Color color) {
@@ -207,47 +207,7 @@ namespace DigitalRolodex {
         private void ViewContactButtonClick(object sender, EventArgs e) {
 
             UpdateOptionButtonAppearance((Button)sender);
-            //ShowPanel(ViewContactPanel);
-        }
-
-        private void UpdateButtonMouseEnter(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = Color.Red;
-        }
-
-        private void UpdateButtonMouseLeave(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = SystemColors.ControlText;
-        }
-
-        private void UpdateButtonMouseDown(object sender, MouseEventArgs e) {
-
-            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
-        }
-
-        private void UpdateButtonMouseUp(object sender, MouseEventArgs e) {
-
-            ((Button)sender).ForeColor = Color.Red;
-        }
-
-        private void DeleteButtonMouseEnter(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = Color.Red;
-        }
-
-        private void DeleteButtonMouseLeave(object sender, EventArgs e) {
-
-            ((Button)sender).ForeColor = SystemColors.ControlText;
-        }
-
-        private void DeleteButtonMouseDown(object sender, MouseEventArgs e) {
-
-            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
-        }
-
-        private void DeleteButtonMouseUp(object sender, MouseEventArgs e) {
-
-            ((Button)sender).ForeColor = Color.Red;
+            ShowPanel(ViewContactPanel);
         }
 
         private void SearchBoxEnter(object sender, EventArgs e) {
@@ -259,6 +219,8 @@ namespace DigitalRolodex {
             searchBox.ForeColor = SystemColors.ControlText;
             searchBox.BackColor = SystemColors.ControlDarkDark;
             AddIcon(searchBox, Properties.Resources.search);
+
+            ViewContactPanel.ExpandEditPanel();
         }
 
         private void SearchBoxLeave(object sender, EventArgs e) {

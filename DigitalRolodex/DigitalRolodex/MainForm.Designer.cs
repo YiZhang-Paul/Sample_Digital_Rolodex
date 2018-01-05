@@ -27,36 +27,27 @@
             this.Sidebar = new System.Windows.Forms.Panel();
             this.SidebarLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarButtonLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.ViewContactButton = new System.Windows.Forms.Button();
-            this.NewContactButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.ToggleSidebarButton = new System.Windows.Forms.Button();
-            this.LogoBox = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.SearchIconBox = new System.Windows.Forms.PictureBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.ControlButtonLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.MinimizeButton = new System.Windows.Forms.Button();
-            this.ViewContactPanel = new System.Windows.Forms.Panel();
-            this.ContactDisplayPanel = new System.Windows.Forms.Panel();
-            this.ContactDisplayTable = new System.Windows.Forms.DataGridView();
-            this.EditContactPanel = new System.Windows.Forms.Panel();
-            this.UpdateButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
+            this.SearchIconBox = new System.Windows.Forms.PictureBox();
+            this.ViewContactButton = new System.Windows.Forms.Button();
+            this.NewContactButton = new System.Windows.Forms.Button();
+            this.ToggleSidebarButton = new System.Windows.Forms.Button();
+            this.LogoBox = new System.Windows.Forms.PictureBox();
+            this.ViewContactPanel = new DigitalRolodexControlLibrary.ViewContactPanel();
             this.NewContactPanel = new DigitalRolodexControlLibrary.NewContactPanel();
             this.Sidebar.SuspendLayout();
             this.SidebarLayout.SuspendLayout();
             this.SidebarButtonLayout.SuspendLayout();
             this.LogoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
             this.TopPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchIconBox)).BeginInit();
             this.ControlButtonLayout.SuspendLayout();
-            this.ViewContactPanel.SuspendLayout();
-            this.ContactDisplayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ContactDisplayTable)).BeginInit();
-            this.EditContactPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchIconBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -106,48 +97,6 @@
             this.SidebarButtonLayout.Size = new System.Drawing.Size(162, 95);
             this.SidebarButtonLayout.TabIndex = 0;
             // 
-            // ViewContactButton
-            // 
-            this.ViewContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewContactButton.FlatAppearance.BorderSize = 0;
-            this.ViewContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.ViewContactButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.ViewContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewContactButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewContactButton.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.ViewContactButton.Image = global::DigitalRolodex.Properties.Resources.view_contact;
-            this.ViewContactButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ViewContactButton.Location = new System.Drawing.Point(0, 47);
-            this.ViewContactButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ViewContactButton.Name = "ViewContactButton";
-            this.ViewContactButton.Size = new System.Drawing.Size(162, 48);
-            this.ViewContactButton.TabIndex = 1;
-            this.ViewContactButton.Text = "   View Contact";
-            this.ViewContactButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ViewContactButton.UseVisualStyleBackColor = true;
-            this.ViewContactButton.Click += new System.EventHandler(this.ViewContactButtonClick);
-            // 
-            // NewContactButton
-            // 
-            this.NewContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NewContactButton.FlatAppearance.BorderSize = 0;
-            this.NewContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.NewContactButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.NewContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewContactButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewContactButton.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.NewContactButton.Image = global::DigitalRolodex.Properties.Resources.add_contact;
-            this.NewContactButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NewContactButton.Location = new System.Drawing.Point(0, 0);
-            this.NewContactButton.Margin = new System.Windows.Forms.Padding(0);
-            this.NewContactButton.Name = "NewContactButton";
-            this.NewContactButton.Size = new System.Drawing.Size(162, 47);
-            this.NewContactButton.TabIndex = 0;
-            this.NewContactButton.Text = "   New Contact";
-            this.NewContactButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.NewContactButton.UseVisualStyleBackColor = true;
-            this.NewContactButton.Click += new System.EventHandler(this.NewContactButtonClick);
-            // 
             // LogoPanel
             // 
             this.LogoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
@@ -161,39 +110,6 @@
             this.LogoPanel.TabIndex = 2;
             this.LogoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
             this.LogoPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
-            // 
-            // ToggleSidebarButton
-            // 
-            this.ToggleSidebarButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToggleSidebarButton.FlatAppearance.BorderSize = 0;
-            this.ToggleSidebarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.ToggleSidebarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
-            this.ToggleSidebarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ToggleSidebarButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToggleSidebarButton.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.ToggleSidebarButton.Image = ((System.Drawing.Image)(resources.GetObject("ToggleSidebarButton.Image")));
-            this.ToggleSidebarButton.Location = new System.Drawing.Point(0, 0);
-            this.ToggleSidebarButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ToggleSidebarButton.Name = "ToggleSidebarButton";
-            this.ToggleSidebarButton.Size = new System.Drawing.Size(54, 61);
-            this.ToggleSidebarButton.TabIndex = 5;
-            this.ToggleSidebarButton.UseVisualStyleBackColor = true;
-            this.ToggleSidebarButton.Click += new System.EventHandler(this.ToggleSidebarButtonClick);
-            // 
-            // LogoBox
-            // 
-            this.LogoBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.LogoBox.Image = global::DigitalRolodex.Properties.Resources.logo_icon;
-            this.LogoBox.Location = new System.Drawing.Point(54, 0);
-            this.LogoBox.Margin = new System.Windows.Forms.Padding(0);
-            this.LogoBox.Name = "LogoBox";
-            this.LogoBox.Size = new System.Drawing.Size(108, 61);
-            this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoBox.TabIndex = 0;
-            this.LogoBox.TabStop = false;
-            this.LogoBox.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
-            this.LogoBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
-            this.LogoBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
             // 
             // TopPanel
             // 
@@ -210,17 +126,6 @@
             this.TopPanel.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
-            // 
-            // SearchIconBox
-            // 
-            this.SearchIconBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SearchIconBox.Image = ((System.Drawing.Image)(resources.GetObject("SearchIconBox.Image")));
-            this.SearchIconBox.Location = new System.Drawing.Point(211, 20);
-            this.SearchIconBox.Name = "SearchIconBox";
-            this.SearchIconBox.Size = new System.Drawing.Size(26, 24);
-            this.SearchIconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SearchIconBox.TabIndex = 4;
-            this.SearchIconBox.TabStop = false;
             // 
             // SearchBox
             // 
@@ -298,109 +203,108 @@
             this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButtonEnter);
             this.MinimizeButton.MouseLeave += new System.EventHandler(this.ButtonLeave);
             // 
+            // SearchIconBox
+            // 
+            this.SearchIconBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.SearchIconBox.Image = ((System.Drawing.Image)(resources.GetObject("SearchIconBox.Image")));
+            this.SearchIconBox.Location = new System.Drawing.Point(211, 20);
+            this.SearchIconBox.Name = "SearchIconBox";
+            this.SearchIconBox.Size = new System.Drawing.Size(26, 24);
+            this.SearchIconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SearchIconBox.TabIndex = 4;
+            this.SearchIconBox.TabStop = false;
+            // 
+            // ViewContactButton
+            // 
+            this.ViewContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ViewContactButton.FlatAppearance.BorderSize = 0;
+            this.ViewContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
+            this.ViewContactButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
+            this.ViewContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewContactButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewContactButton.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.ViewContactButton.Image = global::DigitalRolodex.Properties.Resources.view_contact;
+            this.ViewContactButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ViewContactButton.Location = new System.Drawing.Point(0, 47);
+            this.ViewContactButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ViewContactButton.Name = "ViewContactButton";
+            this.ViewContactButton.Size = new System.Drawing.Size(162, 48);
+            this.ViewContactButton.TabIndex = 1;
+            this.ViewContactButton.Text = "   View Contact";
+            this.ViewContactButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ViewContactButton.UseVisualStyleBackColor = true;
+            this.ViewContactButton.Click += new System.EventHandler(this.ViewContactButtonClick);
+            // 
+            // NewContactButton
+            // 
+            this.NewContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NewContactButton.FlatAppearance.BorderSize = 0;
+            this.NewContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
+            this.NewContactButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
+            this.NewContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewContactButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewContactButton.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.NewContactButton.Image = global::DigitalRolodex.Properties.Resources.add_contact;
+            this.NewContactButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NewContactButton.Location = new System.Drawing.Point(0, 0);
+            this.NewContactButton.Margin = new System.Windows.Forms.Padding(0);
+            this.NewContactButton.Name = "NewContactButton";
+            this.NewContactButton.Size = new System.Drawing.Size(162, 47);
+            this.NewContactButton.TabIndex = 0;
+            this.NewContactButton.Text = "   New Contact";
+            this.NewContactButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.NewContactButton.UseVisualStyleBackColor = true;
+            this.NewContactButton.Click += new System.EventHandler(this.NewContactButtonClick);
+            // 
+            // ToggleSidebarButton
+            // 
+            this.ToggleSidebarButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToggleSidebarButton.FlatAppearance.BorderSize = 0;
+            this.ToggleSidebarButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
+            this.ToggleSidebarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(74)))));
+            this.ToggleSidebarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToggleSidebarButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToggleSidebarButton.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.ToggleSidebarButton.Image = ((System.Drawing.Image)(resources.GetObject("ToggleSidebarButton.Image")));
+            this.ToggleSidebarButton.Location = new System.Drawing.Point(0, 0);
+            this.ToggleSidebarButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ToggleSidebarButton.Name = "ToggleSidebarButton";
+            this.ToggleSidebarButton.Size = new System.Drawing.Size(54, 61);
+            this.ToggleSidebarButton.TabIndex = 5;
+            this.ToggleSidebarButton.UseVisualStyleBackColor = true;
+            this.ToggleSidebarButton.Click += new System.EventHandler(this.ToggleSidebarButtonClick);
+            // 
+            // LogoBox
+            // 
+            this.LogoBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LogoBox.Image = global::DigitalRolodex.Properties.Resources.logo_icon;
+            this.LogoBox.Location = new System.Drawing.Point(54, 0);
+            this.LogoBox.Margin = new System.Windows.Forms.Padding(0);
+            this.LogoBox.Name = "LogoBox";
+            this.LogoBox.Size = new System.Drawing.Size(108, 61);
+            this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoBox.TabIndex = 0;
+            this.LogoBox.TabStop = false;
+            this.LogoBox.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
+            this.LogoBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
+            this.LogoBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
+            // 
             // ViewContactPanel
             // 
-            this.ViewContactPanel.Controls.Add(this.ContactDisplayPanel);
-            this.ViewContactPanel.Controls.Add(this.EditContactPanel);
+            this.ViewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
             this.ViewContactPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ViewContactPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewContactPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.ViewContactPanel.Location = new System.Drawing.Point(162, 61);
             this.ViewContactPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ViewContactPanel.Name = "ViewContactPanel";
             this.ViewContactPanel.Size = new System.Drawing.Size(539, 415);
-            this.ViewContactPanel.TabIndex = 3;
+            this.ViewContactPanel.TabIndex = 2;
             this.ViewContactPanel.Visible = false;
-            // 
-            // ContactDisplayPanel
-            // 
-            this.ContactDisplayPanel.Controls.Add(this.ContactDisplayTable);
-            this.ContactDisplayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContactDisplayPanel.Location = new System.Drawing.Point(0, 0);
-            this.ContactDisplayPanel.Name = "ContactDisplayPanel";
-            this.ContactDisplayPanel.Size = new System.Drawing.Size(539, 348);
-            this.ContactDisplayPanel.TabIndex = 2;
-            // 
-            // ContactDisplayTable
-            // 
-            this.ContactDisplayTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ContactDisplayTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ContactDisplayTable.Location = new System.Drawing.Point(49, 38);
-            this.ContactDisplayTable.Margin = new System.Windows.Forms.Padding(50);
-            this.ContactDisplayTable.Name = "ContactDisplayTable";
-            this.ContactDisplayTable.Size = new System.Drawing.Size(441, 272);
-            this.ContactDisplayTable.TabIndex = 4;
-            // 
-            // EditContactPanel
-            // 
-            this.EditContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.EditContactPanel.Controls.Add(this.UpdateButton);
-            this.EditContactPanel.Controls.Add(this.DeleteButton);
-            this.EditContactPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.EditContactPanel.Location = new System.Drawing.Point(0, 348);
-            this.EditContactPanel.Name = "EditContactPanel";
-            this.EditContactPanel.Size = new System.Drawing.Size(539, 67);
-            this.EditContactPanel.TabIndex = 1;
-            // 
-            // UpdateButton
-            // 
-            this.UpdateButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.UpdateButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UpdateButton.BackgroundImage")));
-            this.UpdateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UpdateButton.FlatAppearance.BorderSize = 0;
-            this.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.UpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UpdateButton.Image = global::DigitalRolodex.Properties.Resources.save_contact_button;
-            this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.UpdateButton.Location = new System.Drawing.Point(174, 4);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
-            this.UpdateButton.Size = new System.Drawing.Size(84, 28);
-            this.UpdateButton.TabIndex = 1;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.UpdateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.UpdateButton.UseVisualStyleBackColor = false;
-            this.UpdateButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UpdateButtonMouseDown);
-            this.UpdateButton.MouseEnter += new System.EventHandler(this.UpdateButtonMouseEnter);
-            this.UpdateButton.MouseLeave += new System.EventHandler(this.UpdateButtonMouseLeave);
-            this.UpdateButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UpdateButtonMouseUp);
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.DeleteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DeleteButton.BackgroundImage")));
-            this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DeleteButton.FlatAppearance.BorderSize = 0;
-            this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DeleteButton.Image = global::DigitalRolodex.Properties.Resources.delete_contact_button;
-            this.DeleteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DeleteButton.Location = new System.Drawing.Point(278, 4);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.DeleteButton.Size = new System.Drawing.Size(86, 28);
-            this.DeleteButton.TabIndex = 4;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DeleteButton.UseVisualStyleBackColor = false;
-            this.DeleteButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DeleteButtonMouseDown);
-            this.DeleteButton.MouseEnter += new System.EventHandler(this.DeleteButtonMouseEnter);
-            this.DeleteButton.MouseLeave += new System.EventHandler(this.DeleteButtonMouseLeave);
-            this.DeleteButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DeleteButtonMouseUp);
             // 
             // NewContactPanel
             // 
-            this.NewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
+            this.NewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
             this.NewContactPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NewContactPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewContactPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -408,7 +312,7 @@
             this.NewContactPanel.Margin = new System.Windows.Forms.Padding(0);
             this.NewContactPanel.Name = "NewContactPanel";
             this.NewContactPanel.Size = new System.Drawing.Size(539, 415);
-            this.NewContactPanel.TabIndex = 2;
+            this.NewContactPanel.TabIndex = 3;
             this.NewContactPanel.Visible = false;
             // 
             // MainForm
@@ -430,15 +334,11 @@
             this.SidebarLayout.ResumeLayout(false);
             this.SidebarButtonLayout.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchIconBox)).EndInit();
             this.ControlButtonLayout.ResumeLayout(false);
-            this.ViewContactPanel.ResumeLayout(false);
-            this.ContactDisplayPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ContactDisplayTable)).EndInit();
-            this.EditContactPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchIconBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,14 +357,9 @@
         private System.Windows.Forms.Button NewContactButton;
         private System.Windows.Forms.Button ToggleSidebarButton;
         private System.Windows.Forms.PictureBox LogoBox;
-        private System.Windows.Forms.Panel ViewContactPanel;
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.PictureBox SearchIconBox;
-        private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Panel EditContactPanel;
-        private System.Windows.Forms.Panel ContactDisplayPanel;
-        private System.Windows.Forms.DataGridView ContactDisplayTable;
+        private DigitalRolodexControlLibrary.ViewContactPanel ViewContactPanel;
         private DigitalRolodexControlLibrary.NewContactPanel NewContactPanel;
     }
 }
