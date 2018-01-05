@@ -7,3 +7,4 @@ D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexC
 D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.pdb
 D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.ViewContactPanel.resources
 D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.csprojResolveAssemblyReference.cache
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.SearchBox.resources

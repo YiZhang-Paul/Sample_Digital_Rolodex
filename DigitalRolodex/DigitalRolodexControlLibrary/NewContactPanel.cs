@@ -12,6 +12,7 @@ namespace DigitalRolodexControlLibrary {
     public partial class NewContactPanel : UserControl {
 
         public delegate void ContactAddingHandler(object sender, EventArgs e);
+
         public event ContactAddingHandler OnContactAdding;
 
         #region Input Field Values

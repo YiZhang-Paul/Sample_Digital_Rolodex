@@ -12,8 +12,8 @@ namespace DigitalRolodex {
     public partial class MainForm : Form {
 
         private Point MouseXY { get; set; }
-        private bool SidebarExpanded { get; set; }
-        private string[] OptionButtonText { get; set; }
+        private bool SidebarCollapsed { get; set; }
+        private string[] OptionsText { get; set; }
 
         private bool Maximized {
 
@@ -26,18 +26,6 @@ namespace DigitalRolodex {
         public MainForm() {
 
             InitializeComponent();
-            SidebarExpanded = true;
-            CollapseEditPanel();
-        }
-
-        private void CollapseEditPanel() {
-
-            //EditContactPanel.Height = 0;
-        }
-
-        private void ExpandEditPanel() {
-
-            //EditContactPanel.Height = (int)(Parent.Height * 0.15);
         }
 
         private void SetButtonBackColor(Button button, Color color) {
@@ -87,7 +75,7 @@ namespace DigitalRolodex {
 
         private void CollapseSidebar() {
 
-            OptionButtonText = GetOptionButtonText();
+            OptionsText = GetOptionButtonText();
 
             foreach(Button button in GetOptionButtons()) {
 
@@ -106,7 +94,7 @@ namespace DigitalRolodex {
             foreach(Button button in GetOptionButtons()) {
 
                 button.ImageAlign = ContentAlignment.MiddleRight;
-                button.Text = OptionButtonText[index++];
+                button.Text = OptionsText[index++];
             }
 
             LogoBox.Visible = true;
@@ -115,37 +103,16 @@ namespace DigitalRolodex {
 
         private void ToggleSidebar() {
 
-            if(SidebarExpanded) CollapseSidebar();
-            else ExpandSidebar();
+            if(SidebarCollapsed) ExpandSidebar();
+            else CollapseSidebar();
 
-            SidebarExpanded = !SidebarExpanded;
+            SidebarCollapsed = !SidebarCollapsed;
         }
 
         private void ShowPanel(UserControl panel) {
 
             panel.Visible = true;
             panel.BringToFront();
-        }
-
-        private void AddIcon(TextBox searchBox, Image image) {
-
-            var icon = new Label();
-            icon.Image = image;
-            icon.AutoSize = false;
-            icon.Size = icon.Image.Size;
-            icon.ImageAlign = ContentAlignment.MiddleCenter;
-            icon.Text = "";
-            icon.BackColor = Color.Transparent;
-            icon.Parent = searchBox;
-            icon.Location = new Point(searchBox.ClientSize.Width - icon.Image.Width, 0);
-        }
-
-        private void RemoveIcon(TextBox searchBox) {
-
-            foreach(Label icon in searchBox.Controls.OfType<Label>()) {
-
-                icon.Dispose();
-            }
         }
         /**
          * event listeners
@@ -193,7 +160,7 @@ namespace DigitalRolodex {
 
             var button = (Button)sender;
             var color = Color.FromArgb(248, 251, 50);
-            int width = (int)(button.Width * (SidebarExpanded ? 0.025 : 0.075));
+            int width = (int)(button.Width * (SidebarCollapsed ? 0.075 : 0.025));
 
             e.Graphics.FillRectangle(new SolidBrush(color), 0, 0, width, button.Height);
         }
@@ -208,30 +175,6 @@ namespace DigitalRolodex {
 
             UpdateOptionButtonAppearance((Button)sender);
             ShowPanel(ViewContactPanel);
-        }
-
-        private void SearchBoxEnter(object sender, EventArgs e) {
-
-            SearchIconBox.Visible = false;
-            var searchBox = (TextBox)sender;
-            searchBox.Width *= 2;
-            searchBox.Text = string.Empty;
-            searchBox.ForeColor = SystemColors.ControlText;
-            searchBox.BackColor = SystemColors.ControlDarkDark;
-            AddIcon(searchBox, Properties.Resources.search);
-
-            ViewContactPanel.ExpandEditPanel();
-        }
-
-        private void SearchBoxLeave(object sender, EventArgs e) {
-
-            SearchIconBox.Visible = true;
-            var searchBox = (TextBox)sender;
-            searchBox.Width /= 2;
-            searchBox.Text = "search contact name...";
-            searchBox.ForeColor = SystemColors.ControlDarkDark;
-            searchBox.BackColor = Color.DarkGray;
-            RemoveIcon(searchBox);
         }
 
         private void MinimizeClick(object sender, EventArgs e) {

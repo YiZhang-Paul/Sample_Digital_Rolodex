@@ -121,8 +121,11 @@
   <data name="round_button_darkpink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_darkpink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_button_lightskyblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\round_button_lightskyblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="round_corner_button_gradient_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\round_corner_button_gradient_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_contact_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_contact_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="round_button_lightgreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_lightgreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +139,8 @@
   <data name="round_button_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_corner_button_gradient_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\round_corner_button_gradient_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="round_button_lightskyblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\round_button_lightskyblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="round_button_lightpink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_button_lightpink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +148,7 @@
   <data name="reset_contact_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reset_contact_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete_contact_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_contact_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
