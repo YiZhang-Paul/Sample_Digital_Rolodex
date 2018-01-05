@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.6.0.0">
+  <Summary numSequencePoints="65" visitedSequencePoints="65" numBranchPoints="19" visitedBranchPoints="19" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" maxCrapScore="3" minCrapScore="1" visitedClasses="2" numClasses="2" visitedMethods="17" numMethods="17" />
+  <Modules>
+    <Module hash="6D-7B-5D-92-E0-4D-F3-9B-E8-9B-79-B1-C9-F5-81-A4-A1-C4-DE-F7">
+      <Summary numSequencePoints="65" visitedSequencePoints="65" numBranchPoints="19" visitedBranchPoints="19" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" maxCrapScore="3" minCrapScore="1" visitedClasses="2" numClasses="2" visitedMethods="17" numMethods="17" />
+      <ModulePath>D:\rolodex\DigitalRolodex\DigitalRolodexTests\bin\Debug\DigitalRolodexClassLibrary.dll</ModulePath>
+      <ModuleTime>2018-01-04T09:25:24.7178421Z</ModuleTime>
+      <ModuleName>DigitalRolodexClassLibrary</ModuleName>
+      <Files>
+        <File uid="1" fullPath="d:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\PhoneNumberValidator.cs" />
+        <File uid="2" fullPath="d:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\RolodexValidator.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="28" visitedSequencePoints="28" numBranchPoints="8" visitedBranchPoints="8" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" maxCrapScore="3" minCrapScore="1" visitedClasses="1" numClasses="1" visitedMethods="6" numMethods="6" />
+          <FullName>DigitalRolodexClassLibrary.PhoneNumberValidator</FullName>
+          <Methods>
+            <Method skippedDueTo="AutoImplementedProperty" visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <MetadataToken>100663303</MetadataToken>
+              <Name>System.Collections.Generic.HashSet`1&lt;System.String&gt; DigitalRolodexClassLibrary.PhoneNumberValidator::get_AreaCodes()</Name>
+              <SequencePoints />
+              <BranchPoints />
+            </Method>
+            <Method skippedDueTo="AutoImplementedProperty" visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <MetadataToken>100663304</MetadataToken>
+              <Name>System.Void DigitalRolodexClassLibrary.PhoneNumberValidator::set_AreaCodes(System.Collections.Generic.HashSet`1&lt;System.String&gt;)</Name>
+              <SequencePoints />
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663305</MetadataToken>
+              <Name>System.Void DigitalRolodexClassLibrary.PhoneNumberValidator::.ctor(System.String)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="12" uspid="1" ordinal="0" offset="0" sl="14" sc="9" el="14" ec="53" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="2" ordinal="1" offset="7" sl="14" sc="54" el="14" ec="55" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="3" ordinal="2" offset="8" sl="16" sc="13" el="16" ec="48" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="10" uspid="4" ordinal="3" offset="22" sl="17" sc="9" el="17" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="12" uspid="1" ordinal="0" offset="0" sl="14" sc="9" el="14" ec="53" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663306</MetadataToken>
+              <Name>System.Collections.Generic.HashSet`1&lt;System.String&gt; DigitalRolodexClassLibrary.PhoneNumberValidator::GetAreaCodes(System.String)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="12" uspid="5" ordinal="0" offset="0" sl="19" sc="63" el="19" ec="64" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="6" ordinal="1" offset="1" sl="21" sc="17" el="21" ec="18" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="7" ordinal="2" offset="2" sl="23" sc="17" el="23" ec="73" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="8" ordinal="3" offset="16" sl="25" sc="13" el="25" ec="39" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="9" ordinal="4" offset="17" sl="25" sc="40" el="25" ec="41" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="10" ordinal="5" offset="18" sl="27" sc="17" el="27" ec="54" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="11" ordinal="6" offset="30" sl="29" sc="17" el="29" ec="33" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="10" uspid="12" ordinal="7" offset="33" sl="31" sc="9" el="31" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="12" uspid="5" ordinal="0" offset="0" sl="19" sc="63" el="19" ec="64" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663307</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.PhoneNumberValidator::IsValidAreaCode(System.String)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="11" uspid="13" ordinal="0" offset="0" sl="33" sc="54" el="33" ec="55" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="11" uspid="14" ordinal="1" offset="1" sl="35" sc="13" el="35" ec="49" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="11" uspid="15" ordinal="2" offset="16" sl="36" sc="9" el="36" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="11" uspid="13" ordinal="0" offset="0" sl="33" sc="54" el="33" ec="55" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663308</MetadataToken>
+              <Name>System.String DigitalRolodexClassLibrary.PhoneNumberValidator::GetDigits(System.String)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="14" uspid="16" ordinal="0" offset="0" sl="38" sc="54" el="38" ec="55" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="14" uspid="17" ordinal="1" offset="1" sl="40" sc="13" el="40" ec="65" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="14" uspid="18" ordinal="2" offset="25" sl="41" sc="9" el="41" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="14" uspid="16" ordinal="0" offset="0" sl="38" sc="54" el="38" ec="55" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663309</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.PhoneNumberValidator::HasLetters(System.String)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="6" uspid="19" ordinal="0" offset="0" sl="43" sc="53" el="43" ec="54" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="6" uspid="20" ordinal="1" offset="1" sl="45" sc="13" el="45" ec="56" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="6" uspid="21" ordinal="2" offset="15" sl="46" sc="9" el="46" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="6" uspid="19" ordinal="0" offset="0" sl="43" sc="53" el="43" ec="54" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="3" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" crapScore="3" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="3" maxCrapScore="3" minCrapScore="3" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663310</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.PhoneNumberValidator::IsValidPhoneNumber(System.String)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="14" uspid="22" ordinal="0" offset="0" sl="48" sc="60" el="48" ec="61" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="14" uspid="23" ordinal="1" offset="1" sl="50" sc="13" el="50" ec="52" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="14" uspid="24" ordinal="2" offset="9" sl="52" sc="13" el="52" ec="63" bec="2" bev="2" fileid="1" />
+                <SequencePoint vc="8" uspid="25" ordinal="3" offset="37" sl="52" sc="64" el="52" ec="65" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="8" uspid="26" ordinal="4" offset="38" sl="54" sc="17" el="54" ec="30" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="6" uspid="27" ordinal="5" offset="42" sl="57" sc="13" el="57" ec="60" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="14" uspid="28" ordinal="6" offset="59" sl="58" sc="9" el="58" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="8" uspid="31" ordinal="2" offset="35" sl="52" path="0" offsetend="37" fileid="1" />
+                <BranchPoint vc="6" uspid="32" ordinal="3" offset="35" sl="52" path="1" offsetend="42" fileid="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="14" uspid="22" ordinal="0" offset="0" sl="48" sc="60" el="48" ec="61" bec="0" bev="0" fileid="1" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="37" visitedSequencePoints="37" numBranchPoints="11" visitedBranchPoints="11" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="1" visitedClasses="1" numClasses="1" visitedMethods="11" numMethods="11" />
+          <FullName>DigitalRolodexClassLibrary.RolodexValidator</FullName>
+          <Methods>
+            <Method skippedDueTo="AutoImplementedProperty" visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <MetadataToken>100663311</MetadataToken>
+              <Name>DigitalRolodexClassLibrary.IPhoneNumberValidator DigitalRolodexClassLibrary.RolodexValidator::get_PhoneNumberValidator()</Name>
+              <SequencePoints />
+              <BranchPoints />
+            </Method>
+            <Method skippedDueTo="AutoImplementedProperty" visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <MetadataToken>100663312</MetadataToken>
+              <Name>System.Void DigitalRolodexClassLibrary.RolodexValidator::set_PhoneNumberValidator(DigitalRolodexClassLibrary.IPhoneNumberValidator)</Name>
+              <SequencePoints />
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663313</MetadataToken>
+              <Name>System.Void DigitalRolodexClassLibrary.RolodexValidator::.ctor(DigitalRolodexClassLibrary.IPhoneNumberValidator)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="18" uspid="33" ordinal="0" offset="0" sl="13" sc="9" el="13" ec="76" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="18" uspid="34" ordinal="1" offset="7" sl="13" sc="77" el="13" ec="78" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="18" uspid="35" ordinal="2" offset="8" sl="15" sc="13" el="15" ec="57" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="18" uspid="36" ordinal="3" offset="16" sl="16" sc="9" el="16" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="18" uspid="33" ordinal="0" offset="0" sl="13" sc="9" el="13" ec="76" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663314</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidNameLength(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="13" uspid="37" ordinal="0" offset="0" sl="18" sc="53" el="18" ec="54" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="38" ordinal="1" offset="1" sl="20" sc="13" el="20" ec="58" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="39" ordinal="2" offset="30" sl="21" sc="9" el="21" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="13" uspid="37" ordinal="0" offset="0" sl="18" sc="53" el="18" ec="54" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663315</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsLegalNameFormat(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="42" ordinal="0" offset="0" sl="23" sc="53" el="23" ec="54" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="9" uspid="43" ordinal="1" offset="1" sl="25" sc="13" el="25" ec="70" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="9" uspid="44" ordinal="2" offset="15" sl="26" sc="9" el="26" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="9" uspid="42" ordinal="0" offset="0" sl="23" sc="53" el="23" ec="54" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663316</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidName(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="13" uspid="45" ordinal="0" offset="0" sl="28" sc="46" el="28" ec="47" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="46" ordinal="1" offset="1" sl="30" sc="13" el="30" ec="42" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="47" ordinal="2" offset="14" sl="32" sc="13" el="32" ec="71" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="48" ordinal="3" offset="37" sl="33" sc="9" el="33" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="13" uspid="45" ordinal="0" offset="0" sl="28" sc="46" el="28" ec="47" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663317</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidPhoneNumber(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="51" ordinal="0" offset="0" sl="35" sc="60" el="35" ec="61" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="4" uspid="52" ordinal="1" offset="1" sl="37" sc="13" el="37" ec="73" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="4" uspid="53" ordinal="2" offset="16" sl="38" sc="9" el="38" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="4" uspid="51" ordinal="0" offset="0" sl="35" sc="60" el="35" ec="61" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663318</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidEmailFormat(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="8" uspid="54" ordinal="0" offset="0" sl="40" sc="55" el="40" ec="56" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="8" uspid="55" ordinal="1" offset="1" sl="42" sc="13" el="42" ec="66" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="8" uspid="56" ordinal="2" offset="15" sl="43" sc="9" el="43" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="8" uspid="54" ordinal="0" offset="0" sl="40" sc="55" el="40" ec="56" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663319</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidEmailLength(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="57" ordinal="0" offset="0" sl="45" sc="55" el="45" ec="56" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="4" uspid="58" ordinal="1" offset="1" sl="47" sc="13" el="47" ec="60" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="4" uspid="59" ordinal="2" offset="30" sl="48" sc="9" el="48" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="4" uspid="57" ordinal="0" offset="0" sl="45" sc="55" el="45" ec="56" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663320</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidEmail(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="8" uspid="62" ordinal="0" offset="0" sl="50" sc="48" el="50" ec="49" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="8" uspid="63" ordinal="1" offset="1" sl="52" sc="13" el="52" ec="34" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="8" uspid="64" ordinal="2" offset="9" sl="54" sc="13" el="54" ec="75" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="8" uspid="65" ordinal="3" offset="32" sl="55" sc="9" el="55" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="8" uspid="62" ordinal="0" offset="0" sl="50" sc="48" el="50" ec="49" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663321</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidAddressLength(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="6" uspid="68" ordinal="0" offset="0" sl="57" sc="59" el="57" ec="60" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="6" uspid="69" ordinal="1" offset="1" sl="59" sc="13" el="59" ec="64" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="6" uspid="70" ordinal="2" offset="30" sl="60" sc="9" el="60" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="6" uspid="68" ordinal="0" offset="0" sl="57" sc="59" el="57" ec="60" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663322</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsLegalCharacters(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="73" ordinal="0" offset="0" sl="62" sc="56" el="62" ec="57" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="74" ordinal="1" offset="1" sl="64" sc="13" el="64" ec="68" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="75" ordinal="2" offset="15" sl="65" sc="9" el="65" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="73" ordinal="0" offset="0" sl="62" sc="56" el="62" ec="57" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663323</MetadataToken>
+              <Name>System.Boolean DigitalRolodexClassLibrary.RolodexValidator::IsValidAddress(System.String)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="6" uspid="76" ordinal="0" offset="0" sl="67" sc="52" el="67" ec="53" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="6" uspid="77" ordinal="1" offset="1" sl="69" sc="13" el="69" ec="38" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="6" uspid="78" ordinal="2" offset="9" sl="71" sc="13" el="71" ec="80" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="6" uspid="79" ordinal="3" offset="32" sl="72" sc="9" el="72" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="6" uspid="76" ordinal="0" offset="0" sl="67" sc="52" el="67" ec="53" bec="0" bev="0" fileid="2" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

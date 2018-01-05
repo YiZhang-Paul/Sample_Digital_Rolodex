@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRolodexTests", "Digi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRolodexClassLibrary", "DigitalRolodexClassLibrary\DigitalRolodexClassLibrary.csproj", "{B528FE20-4088-4932-9DF4-C119C2965259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRolodex", "DigitalRolodex\DigitalRolodex.csproj", "{79055ADD-CFF8-4500-94AD-229F5CD47A1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B528FE20-4088-4932-9DF4-C119C2965259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B528FE20-4088-4932-9DF4-C119C2965259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B528FE20-4088-4932-9DF4-C119C2965259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79055ADD-CFF8-4500-94AD-229F5CD47A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79055ADD-CFF8-4500-94AD-229F5CD47A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79055ADD-CFF8-4500-94AD-229F5CD47A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79055ADD-CFF8-4500-94AD-229F5CD47A1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
