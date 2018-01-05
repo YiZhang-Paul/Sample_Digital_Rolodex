@@ -59,6 +59,12 @@
     <Compile Include="SearchBox.Designer.cs">
       <DependentUpon>SearchBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sidebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewContactPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchBox.resx">
       <DependentUpon>SearchBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewContactPanel.resx">
       <DependentUpon>ViewContactPanel.cs</DependentUpon>
@@ -114,6 +123,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
