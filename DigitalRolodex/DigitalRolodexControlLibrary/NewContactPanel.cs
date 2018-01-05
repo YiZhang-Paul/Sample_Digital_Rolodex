@@ -15,10 +15,10 @@ namespace DigitalRolodexControlLibrary {
         public event ContactAddingHandler OnContactAdding;
 
         #region Input Field Values
-        public string Name { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public string Email { get; private set; }
-        public string Address { get; private set; }
+        public string ContactName { get { return NameInputTextBox.Text; } }
+        public string PhoneNumber { get { return PhoneInputTextBox.Text; } }
+        public string Email { get { return EmailInputTextBox.Text; } }
+        public string Address { get { return AddressInputTextBox.Text; } }
         #endregion
 
         public NewContactPanel() {
