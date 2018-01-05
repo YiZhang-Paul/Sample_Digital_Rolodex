@@ -1,0 +1,9 @@
+D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodexForm.csproj.GenerateResource.Cache
+D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.exe
+D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodexForm.MainForm.resources
+D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodexForm.Properties.Resources.resources
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodex.exe.config
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodex.exe
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodex.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodexForm.csprojResolveAssemblyReference.cache

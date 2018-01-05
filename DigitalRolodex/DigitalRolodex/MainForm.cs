@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DigitalRolodex {
-    public partial class DigitalRolodex : Form {
+    public partial class MainForm : Form {
 
         private Point MouseXY { get; set; }
         private bool SidebarExpanded { get; set; }
@@ -23,10 +23,21 @@ namespace DigitalRolodex {
             }
         }
 
-        public DigitalRolodex() {
+        public MainForm() {
 
             InitializeComponent();
             SidebarExpanded = true;
+            CollapseEditPanel();
+        }
+
+        private void CollapseEditPanel() {
+
+            EditContactPanel.Height = 0;
+        }
+
+        private void ExpandEditPanel() {
+
+            EditContactPanel.Height = (int)(Parent.Height * 0.15);
         }
 
         private void SetButtonBackColor(Button button, Color color) {
@@ -107,6 +118,27 @@ namespace DigitalRolodex {
             panel.Visible = true;
             panel.BringToFront();
         }
+
+        private void AddIcon(TextBox searchBox, Image image) {
+
+            var icon = new Label();
+            icon.Image = image;
+            icon.AutoSize = false;
+            icon.Size = icon.Image.Size;
+            icon.ImageAlign = ContentAlignment.MiddleCenter;
+            icon.Text = "";
+            icon.BackColor = Color.Transparent;
+            icon.Parent = searchBox;
+            icon.Location = new Point(searchBox.ClientSize.Width - icon.Image.Width, 0);
+        }
+
+        private void RemoveIcon(TextBox searchBox) {
+
+            foreach(Label icon in searchBox.Controls.OfType<Label>()) {
+
+                icon.Dispose();
+            }
+        }
         /**
          * event listeners
          */
@@ -173,6 +205,87 @@ namespace DigitalRolodex {
             ShowPanel(ViewContactPanel);
         }
 
+        private void AddContactButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_darkpink;
+        }
+
+        private void AddContactButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightpink;
+        }
+
+        private void AddContactButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightgreen;
+        }
+
+        private void AddContactButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_darkpink;
+        }
+
+        private void ResetInputButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
+        }
+
+        private void ResetInputButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightskyblue;
+        }
+        
+
+        private void ResetInputButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_lightgreen;
+        }
+
+        private void ResetInputButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
+        }
+
+        private void UpdateButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void UpdateButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlText;
+        }
+
+        private void UpdateButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
+        }
+
+        private void UpdateButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void DeleteButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void DeleteButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlText;
+        }
+
+        private void DeleteButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
+        }
+
+        private void DeleteButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
         private void MinimizeClick(object sender, EventArgs e) {
 
             WindowState = FormWindowState.Minimized;
@@ -181,6 +294,28 @@ namespace DigitalRolodex {
         private void ExitClick(object sender, EventArgs e) {
 
             Application.Exit();
+        }
+
+        private void SearchBoxEnter(object sender, EventArgs e) {
+
+            SearchIconBox.Visible = false;
+            var searchBox = (TextBox)sender;
+            searchBox.Width *= 2;
+            searchBox.Text = string.Empty;
+            searchBox.ForeColor = SystemColors.ControlText;
+            searchBox.BackColor = SystemColors.ControlDarkDark;
+            AddIcon(searchBox, Properties.Resources.search);
+        }
+
+        private void SearchBoxLeave(object sender, EventArgs e) {
+
+            SearchIconBox.Visible = true;
+            var searchBox = (TextBox)sender;
+            searchBox.Width /= 2;
+            searchBox.Text = "search contact name...";
+            searchBox.ForeColor = SystemColors.ControlDarkDark;
+            searchBox.BackColor = Color.DarkGray;
+            RemoveIcon(searchBox);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace DigitalRolodex {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DigitalRolodex());
+            Application.Run(new MainForm());
         }
     }
 }

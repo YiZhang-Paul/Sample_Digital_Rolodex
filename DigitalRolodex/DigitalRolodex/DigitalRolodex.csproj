@@ -90,6 +90,39 @@
   <ItemGroup>
     <None Include="Resources\view_contact.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_button_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_button_darkpink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_button_lightgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_button_lightpink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_button_lightskyblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_contact_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset_contact_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_contact_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_contact_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_corner_button_gradient_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
