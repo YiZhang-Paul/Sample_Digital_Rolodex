@@ -111,6 +111,15 @@
   <ItemGroup>
     <None Include="Resources\reset_contact_button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_contact_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_contact_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_corner_button_gradient_green.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

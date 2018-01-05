@@ -27,6 +27,17 @@ namespace DigitalRolodex {
 
             InitializeComponent();
             SidebarExpanded = true;
+            CollapseEditPanel();
+        }
+
+        private void CollapseEditPanel() {
+
+            EditContactPanel.Height = 0;
+        }
+
+        private void ExpandEditPanel() {
+
+            EditContactPanel.Height = (int)(Parent.Height * 0.15);
         }
 
         private void SetButtonBackColor(Button button, Color color) {
@@ -212,6 +223,46 @@ namespace DigitalRolodex {
         private void ResetInputButtonMouseUp(object sender, MouseEventArgs e) {
 
             ((Button)sender).BackgroundImage = Properties.Resources.round_button_blue;
+        }
+
+        private void UpdateButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void UpdateButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlText;
+        }
+
+        private void UpdateButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
+        }
+
+        private void UpdateButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void DeleteButtonMouseEnter(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
+        }
+
+        private void DeleteButtonMouseLeave(object sender, EventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlText;
+        }
+
+        private void DeleteButtonMouseDown(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = SystemColors.ControlLightLight;
+        }
+
+        private void DeleteButtonMouseUp(object sender, MouseEventArgs e) {
+
+            ((Button)sender).ForeColor = Color.Red;
         }
 
         private void MinimizeClick(object sender, EventArgs e) {

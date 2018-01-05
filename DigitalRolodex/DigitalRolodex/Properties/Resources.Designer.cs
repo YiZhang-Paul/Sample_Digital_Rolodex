@@ -83,6 +83,16 @@ namespace DigitalRolodex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_contact_button {
+            get {
+                object obj = ResourceManager.GetObject("delete_contact_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_icon {
             get {
                 object obj = ResourceManager.GetObject("logo_icon", resourceCulture);
@@ -156,6 +166,26 @@ namespace DigitalRolodex.Properties {
         internal static System.Drawing.Bitmap round_button_lightskyblue {
             get {
                 object obj = ResourceManager.GetObject("round_button_lightskyblue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_corner_button_gradient_green {
+            get {
+                object obj = ResourceManager.GetObject("round_corner_button_gradient_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_contact_button {
+            get {
+                object obj = ResourceManager.GetObject("save_contact_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
