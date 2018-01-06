@@ -66,6 +66,7 @@
     <Compile Include="RolodexValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PhoneNumberValidatorTest.cs" />
+    <Compile Include="ContactTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
