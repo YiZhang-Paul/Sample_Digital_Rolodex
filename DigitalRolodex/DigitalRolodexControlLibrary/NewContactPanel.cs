@@ -97,7 +97,7 @@ namespace DigitalRolodexControlLibrary {
             return ErrorDisplayLink[textBox];
         }
 
-        public void ShowError(Label errorDisplay, string message) {
+        private void ShowError(Label errorDisplay, string message) {
 
             errorDisplay.Text = message;
         }
@@ -105,6 +105,29 @@ namespace DigitalRolodexControlLibrary {
         private void RemoveError(Label errorDisplay) {
 
             errorDisplay.Text = string.Empty;
+        }
+
+        public void ShowErrors(string[] errors) { 
+        
+            foreach(string error in errors) {
+
+                if(error == "name") {
+
+                    ShowError(GetErrorDisplay(NameInputTextBox), "* Invalid Name (Length: 2-25)");
+                }
+                else if(error == "phone") {
+
+                    ShowError(GetErrorDisplay(PhoneInputTextBox), "* Invalid Phone Number");
+                }
+                else if(error == "email") {
+
+                    ShowError(GetErrorDisplay(EmailInputTextBox), "* Invalid Email (xxx@example.com)");
+                }
+                else if(error == "address") {
+
+                    ShowError(GetErrorDisplay(AddressInputTextBox), "* Invalid Address (Length: 6-50)");
+                }
+            }
         }
 
         private bool IsEmpty(TextBoxBase textBox) { 

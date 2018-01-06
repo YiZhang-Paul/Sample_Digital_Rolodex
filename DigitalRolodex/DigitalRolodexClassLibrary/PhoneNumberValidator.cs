@@ -16,6 +16,7 @@ namespace DigitalRolodexClassLibrary {
             AreaCodes = GetAreaCodes(fileName);
         }
 
+        #region Area Code Validations
         private HashSet<string> GetAreaCodes(string fileName) {
 
             try {
@@ -34,7 +35,9 @@ namespace DigitalRolodexClassLibrary {
 
             return AreaCodes.Contains(areaCode);
         }
+        #endregion
 
+        #region Phone Number Validations
         private string GetDigits(string phoneNumber) {
 
             return Regex.Replace(phoneNumber.Trim(), @"\D", "");
@@ -56,5 +59,6 @@ namespace DigitalRolodexClassLibrary {
 
             return IsValidAreaCode(digits.Substring(0, 3));
         }
+        #endregion
     }
 }

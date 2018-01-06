@@ -29,6 +29,23 @@ namespace DigitalRolodex {
             panel.BringToFront();
         }
 
+        private string[] CheckInputErrors(string[] inputs) {
+
+            var errors = new List<string>();
+
+            if(!Validator.IsValidName(inputs[0])) errors.Add("name");
+            if(!Validator.IsValidPhoneNumber(inputs[1])) errors.Add("phone");
+            if(!Validator.IsValidEmail(inputs[2])) errors.Add("email");
+            if(!Validator.IsValidAddress(inputs[3])) errors.Add("address");
+
+            return errors.ToArray();
+        }
+
+        private void AddContact(string[] inputs) { 
+        
+            //TODO: not yet implemented
+        }
+
         #region Event Listeners
         private void SidebarOnOptionSelected(object sender, EventArgs e) {
 
@@ -48,7 +65,16 @@ namespace DigitalRolodex {
 
         private void NewContactPanelOnContactAdding(object sender, EventArgs e) {
 
-            //TODO: On Contact Adding Event Handling
+            var errors = CheckInputErrors(NewContactPanel.Inputs);
+
+            if(errors.Length > 0) {
+
+                NewContactPanel.ShowErrors(errors);
+            }
+            else {
+
+                AddContact(NewContactPanel.Inputs);
+            }
         }
 
         private void GetMouseXY(object sender, MouseEventArgs e) {
