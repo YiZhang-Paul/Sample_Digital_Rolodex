@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.AddContactLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddressInputPanel = new System.Windows.Forms.Panel();
             this.AddressInputTextBox = new System.Windows.Forms.TextBox();
@@ -43,6 +44,8 @@
             this.NewContactButtonLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddContactButton = new System.Windows.Forms.Button();
             this.ResetInputButton = new System.Windows.Forms.Button();
+            this.SuccessMessageLabel = new System.Windows.Forms.Label();
+            this.FadeTimer = new System.Windows.Forms.Timer(this.components);
             this.AddContactLayout.SuspendLayout();
             this.AddressInputPanel.SuspendLayout();
             this.NameInputPanel.SuspendLayout();
@@ -278,6 +281,7 @@
             this.NewContactButtonLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.NewContactButtonLayout.Controls.Add(this.AddContactButton, 0, 1);
             this.NewContactButtonLayout.Controls.Add(this.ResetInputButton, 1, 1);
+            this.NewContactButtonLayout.Controls.Add(this.SuccessMessageLabel, 0, 0);
             this.NewContactButtonLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NewContactButtonLayout.Location = new System.Drawing.Point(107, 268);
             this.NewContactButtonLayout.Margin = new System.Windows.Forms.Padding(0);
@@ -302,10 +306,10 @@
             this.AddContactButton.Image = global::DigitalRolodexControlLibrary.Properties.Resources.add_contact_button;
             this.AddContactButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddContactButton.Location = new System.Drawing.Point(5, 44);
-            this.AddContactButton.Margin = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.AddContactButton.Margin = new System.Windows.Forms.Padding(5, 5, 13, 5);
             this.AddContactButton.Name = "AddContactButton";
             this.AddContactButton.Padding = new System.Windows.Forms.Padding(0, 0, 16, 0);
-            this.AddContactButton.Size = new System.Drawing.Size(146, 54);
+            this.AddContactButton.Size = new System.Drawing.Size(143, 54);
             this.AddContactButton.TabIndex = 0;
             this.AddContactButton.Text = "Add";
             this.AddContactButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -330,11 +334,11 @@
             this.ResetInputButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ResetInputButton.Image = global::DigitalRolodexControlLibrary.Properties.Resources.reset_contact_button;
             this.ResetInputButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ResetInputButton.Location = new System.Drawing.Point(171, 44);
-            this.ResetInputButton.Margin = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.ResetInputButton.Location = new System.Drawing.Point(174, 44);
+            this.ResetInputButton.Margin = new System.Windows.Forms.Padding(13, 5, 5, 5);
             this.ResetInputButton.Name = "ResetInputButton";
             this.ResetInputButton.Padding = new System.Windows.Forms.Padding(0, 0, 14, 0);
-            this.ResetInputButton.Size = new System.Drawing.Size(147, 54);
+            this.ResetInputButton.Size = new System.Drawing.Size(144, 54);
             this.ResetInputButton.TabIndex = 1;
             this.ResetInputButton.Text = "Reset";
             this.ResetInputButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,6 +349,24 @@
             this.ResetInputButton.MouseEnter += new System.EventHandler(this.ResetInputButtonMouseEnter);
             this.ResetInputButton.MouseLeave += new System.EventHandler(this.ResetInputButtonMouseLeave);
             this.ResetInputButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ResetInputButtonMouseUp);
+            // 
+            // SuccessMessageLabel
+            // 
+            this.SuccessMessageLabel.AutoSize = true;
+            this.SuccessMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SuccessMessageLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuccessMessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
+            this.SuccessMessageLabel.Location = new System.Drawing.Point(3, 0);
+            this.SuccessMessageLabel.Name = "SuccessMessageLabel";
+            this.SuccessMessageLabel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.SuccessMessageLabel.Size = new System.Drawing.Size(155, 39);
+            this.SuccessMessageLabel.TabIndex = 2;
+            this.SuccessMessageLabel.Text = "Contact Added";
+            this.SuccessMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FadeTimer
+            // 
+            this.FadeTimer.Interval = 1;
             // 
             // NewContactPanel
             // 
@@ -367,6 +389,7 @@
             this.EmailInputPanel.ResumeLayout(false);
             this.EmailInputPanel.PerformLayout();
             this.NewContactButtonLayout.ResumeLayout(false);
+            this.NewContactButtonLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +416,7 @@
         private System.Windows.Forms.TableLayoutPanel NewContactButtonLayout;
         private System.Windows.Forms.Button AddContactButton;
         private System.Windows.Forms.Button ResetInputButton;
+        private System.Windows.Forms.Label SuccessMessageLabel;
+        private System.Windows.Forms.Timer FadeTimer;
     }
 }

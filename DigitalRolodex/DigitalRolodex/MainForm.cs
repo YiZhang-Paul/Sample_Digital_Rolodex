@@ -74,6 +74,8 @@ namespace DigitalRolodex {
             else {
 
                 AddContact(NewContactPanel.Inputs);
+                NewContactPanel.ShowSuccessMessage();
+                NewContactPanel.Reset();
             }
         }
 

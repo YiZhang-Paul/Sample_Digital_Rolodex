@@ -51,6 +51,15 @@ namespace DigitalRolodexControlLibrary {
             ErrorDisplayLink = LinkErrorDisplays();
         }
 
+        public void Reset() {
+
+            foreach(var textBox in InputBoxes) {
+
+                textBox.Clear();
+                GetErrorDisplay(textBox).Text = string.Empty;
+            }
+        }
+
         #region Resources Setups and Initializations
         private TextBoxBase[] AddInputBoxes() { 
         
@@ -87,6 +96,7 @@ namespace DigitalRolodexControlLibrary {
         }
         #endregion
 
+        #region Handle Error Display
         private Label GetErrorDisplay(TextBoxBase textBox) { 
         
             if(!ErrorDisplayLink.ContainsKey(textBox)) {
@@ -129,7 +139,9 @@ namespace DigitalRolodexControlLibrary {
                 }
             }
         }
+        #endregion
 
+        #region Check for Empty Fields
         private bool IsEmpty(TextBoxBase textBox) { 
         
             if(textBox.GetType() == typeof(TextBox)) {
@@ -155,6 +167,36 @@ namespace DigitalRolodexControlLibrary {
 
             return hasError;
         }
+        #endregion
+
+        public void ShowSuccessMessage() {
+
+            SuccessMessageLabel.ForeColor = Color.Red;
+            StartFadeOut();
+        }
+
+        private void StartFadeOut() {
+
+            this.FadeTimer.Tick += this.FadeOut;
+            this.FadeTimer.Start();
+        }
+
+        #region Text Fade Event Listeners
+        private void FadeOut(object sender, EventArgs e) {
+
+            int r = Math.Max(SuccessMessageLabel.ForeColor.R - 5, 32);
+            int g = Math.Max(SuccessMessageLabel.ForeColor.G - 1, 40);
+            int b = Math.Max(SuccessMessageLabel.ForeColor.B - 1, 55);
+
+            SuccessMessageLabel.ForeColor = Color.FromArgb(r, g, b);
+
+            if(r == 32 && g == 40 && b == 55) {
+
+                this.FadeTimer.Tick -= this.FadeOut;
+                this.FadeTimer.Stop();
+            }
+        }
+        #endregion
 
         #region Input Boxes Event Listeners
         private void InputTextChanged(object sender, EventArgs e) {
@@ -203,10 +245,7 @@ namespace DigitalRolodexControlLibrary {
         #region Reset Input Button Event Listeners
         private void ResetInputButtonClick(object sender, EventArgs e) {
 
-            foreach(var textBox in InputBoxes) {
-
-                textBox.Clear();
-            }
+            Reset();
         }
 
         private void ResetInputButtonMouseEnter(object sender, EventArgs e) {
