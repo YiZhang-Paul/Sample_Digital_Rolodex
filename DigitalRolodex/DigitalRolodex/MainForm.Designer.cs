@@ -31,12 +31,16 @@
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Sidebar = new DigitalRolodexControlLibrary.Sidebar();
             this.UIPanel = new System.Windows.Forms.Panel();
+            this.UserViewLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.UserViewPanel = new System.Windows.Forms.Panel();
             this.NewContactPanel = new DigitalRolodexControlLibrary.NewContactPanel();
             this.ViewContactPanel = new DigitalRolodexControlLibrary.ViewContactPanel();
             this.TopPanel.SuspendLayout();
             this.ControlButtonLayout.SuspendLayout();
             this.MainLayout.SuspendLayout();
             this.UIPanel.SuspendLayout();
+            this.UserViewLayout.SuspendLayout();
+            this.UserViewPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -44,7 +48,7 @@
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
             this.TopPanel.Controls.Add(this.SearchBox);
             this.TopPanel.Controls.Add(this.ControlButtonLayout);
-            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.TopPanel.Name = "TopPanel";
@@ -155,9 +159,7 @@
             // 
             // UIPanel
             // 
-            this.UIPanel.Controls.Add(this.NewContactPanel);
-            this.UIPanel.Controls.Add(this.TopPanel);
-            this.UIPanel.Controls.Add(this.ViewContactPanel);
+            this.UIPanel.Controls.Add(this.UserViewLayout);
             this.UIPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UIPanel.Location = new System.Drawing.Point(161, 0);
             this.UIPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -165,21 +167,50 @@
             this.UIPanel.Size = new System.Drawing.Size(540, 476);
             this.UIPanel.TabIndex = 5;
             // 
+            // UserViewLayout
+            // 
+            this.UserViewLayout.ColumnCount = 1;
+            this.UserViewLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.UserViewLayout.Controls.Add(this.TopPanel, 0, 0);
+            this.UserViewLayout.Controls.Add(this.UserViewPanel, 0, 1);
+            this.UserViewLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserViewLayout.Location = new System.Drawing.Point(0, 0);
+            this.UserViewLayout.Name = "UserViewLayout";
+            this.UserViewLayout.RowCount = 2;
+            this.UserViewLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.UserViewLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.UserViewLayout.Size = new System.Drawing.Size(540, 476);
+            this.UserViewLayout.TabIndex = 4;
+            // 
+            // UserViewPanel
+            // 
+            this.UserViewPanel.Controls.Add(this.NewContactPanel);
+            this.UserViewPanel.Controls.Add(this.ViewContactPanel);
+            this.UserViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserViewPanel.Location = new System.Drawing.Point(0, 61);
+            this.UserViewPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.UserViewPanel.Name = "UserViewPanel";
+            this.UserViewPanel.Size = new System.Drawing.Size(540, 415);
+            this.UserViewPanel.TabIndex = 2;
+            // 
             // NewContactPanel
             // 
+            this.NewContactPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.NewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
             this.NewContactPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NewContactPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewContactPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.NewContactPanel.Location = new System.Drawing.Point(0, 61);
+            this.NewContactPanel.Location = new System.Drawing.Point(0, 0);
             this.NewContactPanel.Margin = new System.Windows.Forms.Padding(0);
             this.NewContactPanel.Name = "NewContactPanel";
             this.NewContactPanel.Size = new System.Drawing.Size(540, 415);
             this.NewContactPanel.TabIndex = 3;
             this.NewContactPanel.Visible = false;
+            this.NewContactPanel.OnContactAdding += new DigitalRolodexControlLibrary.NewContactPanel.ContactAddingHandler(this.NewContactPanelOnContactAdding);
             // 
             // ViewContactPanel
             // 
+            this.ViewContactPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ViewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
             this.ViewContactPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ViewContactPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +218,7 @@
             this.ViewContactPanel.Location = new System.Drawing.Point(0, 0);
             this.ViewContactPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ViewContactPanel.Name = "ViewContactPanel";
-            this.ViewContactPanel.Size = new System.Drawing.Size(540, 476);
+            this.ViewContactPanel.Size = new System.Drawing.Size(540, 415);
             this.ViewContactPanel.TabIndex = 2;
             this.ViewContactPanel.Visible = false;
             // 
@@ -207,6 +238,8 @@
             this.ControlButtonLayout.ResumeLayout(false);
             this.MainLayout.ResumeLayout(false);
             this.UIPanel.ResumeLayout(false);
+            this.UserViewLayout.ResumeLayout(false);
+            this.UserViewPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -223,6 +256,8 @@
         private DigitalRolodexControlLibrary.Sidebar Sidebar;
         private System.Windows.Forms.TableLayoutPanel MainLayout;
         private System.Windows.Forms.Panel UIPanel;
+        private System.Windows.Forms.TableLayoutPanel UserViewLayout;
+        private System.Windows.Forms.Panel UserViewPanel;
     }
 }
 

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.AddContactLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddressInputPanel = new System.Windows.Forms.Panel();
             this.AddressInputTextBox = new System.Windows.Forms.TextBox();
@@ -43,6 +44,8 @@
             this.NewContactButtonLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddContactButton = new System.Windows.Forms.Button();
             this.ResetInputButton = new System.Windows.Forms.Button();
+            this.SuccessMessageLabel = new System.Windows.Forms.Label();
+            this.FadeTimer = new System.Windows.Forms.Timer(this.components);
             this.AddContactLayout.SuspendLayout();
             this.AddressInputPanel.SuspendLayout();
             this.NameInputPanel.SuspendLayout();
@@ -101,6 +104,7 @@
             this.AddressInputTextBox.Name = "AddressInputTextBox";
             this.AddressInputTextBox.Size = new System.Drawing.Size(201, 29);
             this.AddressInputTextBox.TabIndex = 2;
+            this.AddressInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // AddressInputLabel
             // 
@@ -119,11 +123,11 @@
             this.AddressValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.AddressValidationLabel.AutoSize = true;
-            this.AddressValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.AddressValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.AddressValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.AddressValidationLabel.Name = "AddressValidationLabel";
-            this.AddressValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.AddressValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.AddressValidationLabel.TabIndex = 0;
             // 
             // NameInputPanel
@@ -148,6 +152,7 @@
             this.NameInputTextBox.Name = "NameInputTextBox";
             this.NameInputTextBox.Size = new System.Drawing.Size(201, 29);
             this.NameInputTextBox.TabIndex = 2;
+            this.NameInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // NameInputLabel
             // 
@@ -166,11 +171,11 @@
             this.NameValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.NameValidationLabel.AutoSize = true;
-            this.NameValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.NameValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.NameValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.NameValidationLabel.Name = "NameValidationLabel";
-            this.NameValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.NameValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.NameValidationLabel.TabIndex = 0;
             // 
             // PhoneInputPanel
@@ -195,6 +200,7 @@
             this.PhoneInputTextBox.Name = "PhoneInputTextBox";
             this.PhoneInputTextBox.Size = new System.Drawing.Size(109, 29);
             this.PhoneInputTextBox.TabIndex = 2;
+            this.PhoneInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // PhoneInputLabel
             // 
@@ -213,11 +219,11 @@
             this.PhoneValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PhoneValidationLabel.AutoSize = true;
-            this.PhoneValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PhoneValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.PhoneValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.PhoneValidationLabel.Name = "PhoneValidationLabel";
-            this.PhoneValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.PhoneValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.PhoneValidationLabel.TabIndex = 0;
             // 
             // EmailInputPanel
@@ -242,6 +248,7 @@
             this.EmailInputTextBox.Name = "EmailInputTextBox";
             this.EmailInputTextBox.Size = new System.Drawing.Size(201, 29);
             this.EmailInputTextBox.TabIndex = 3;
+            this.EmailInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // EmailInputLabel
             // 
@@ -260,11 +267,11 @@
             this.EmailValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.EmailValidationLabel.AutoSize = true;
-            this.EmailValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EmailValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.EmailValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.EmailValidationLabel.Name = "EmailValidationLabel";
-            this.EmailValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.EmailValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.EmailValidationLabel.TabIndex = 0;
             // 
             // NewContactButtonLayout
@@ -274,6 +281,7 @@
             this.NewContactButtonLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.NewContactButtonLayout.Controls.Add(this.AddContactButton, 0, 1);
             this.NewContactButtonLayout.Controls.Add(this.ResetInputButton, 1, 1);
+            this.NewContactButtonLayout.Controls.Add(this.SuccessMessageLabel, 0, 0);
             this.NewContactButtonLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NewContactButtonLayout.Location = new System.Drawing.Point(107, 268);
             this.NewContactButtonLayout.Margin = new System.Windows.Forms.Padding(0);
@@ -298,10 +306,10 @@
             this.AddContactButton.Image = global::DigitalRolodexControlLibrary.Properties.Resources.add_contact_button;
             this.AddContactButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddContactButton.Location = new System.Drawing.Point(5, 44);
-            this.AddContactButton.Margin = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.AddContactButton.Margin = new System.Windows.Forms.Padding(5, 5, 13, 5);
             this.AddContactButton.Name = "AddContactButton";
             this.AddContactButton.Padding = new System.Windows.Forms.Padding(0, 0, 16, 0);
-            this.AddContactButton.Size = new System.Drawing.Size(146, 54);
+            this.AddContactButton.Size = new System.Drawing.Size(143, 54);
             this.AddContactButton.TabIndex = 0;
             this.AddContactButton.Text = "Add";
             this.AddContactButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,11 +334,11 @@
             this.ResetInputButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ResetInputButton.Image = global::DigitalRolodexControlLibrary.Properties.Resources.reset_contact_button;
             this.ResetInputButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ResetInputButton.Location = new System.Drawing.Point(171, 44);
-            this.ResetInputButton.Margin = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.ResetInputButton.Location = new System.Drawing.Point(174, 44);
+            this.ResetInputButton.Margin = new System.Windows.Forms.Padding(13, 5, 5, 5);
             this.ResetInputButton.Name = "ResetInputButton";
             this.ResetInputButton.Padding = new System.Windows.Forms.Padding(0, 0, 14, 0);
-            this.ResetInputButton.Size = new System.Drawing.Size(147, 54);
+            this.ResetInputButton.Size = new System.Drawing.Size(144, 54);
             this.ResetInputButton.TabIndex = 1;
             this.ResetInputButton.Text = "Reset";
             this.ResetInputButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,6 +349,24 @@
             this.ResetInputButton.MouseEnter += new System.EventHandler(this.ResetInputButtonMouseEnter);
             this.ResetInputButton.MouseLeave += new System.EventHandler(this.ResetInputButtonMouseLeave);
             this.ResetInputButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ResetInputButtonMouseUp);
+            // 
+            // SuccessMessageLabel
+            // 
+            this.SuccessMessageLabel.AutoSize = true;
+            this.SuccessMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SuccessMessageLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuccessMessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
+            this.SuccessMessageLabel.Location = new System.Drawing.Point(3, 0);
+            this.SuccessMessageLabel.Name = "SuccessMessageLabel";
+            this.SuccessMessageLabel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.SuccessMessageLabel.Size = new System.Drawing.Size(155, 39);
+            this.SuccessMessageLabel.TabIndex = 2;
+            this.SuccessMessageLabel.Text = "Contact Added";
+            this.SuccessMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FadeTimer
+            // 
+            this.FadeTimer.Interval = 1;
             // 
             // NewContactPanel
             // 
@@ -363,6 +389,7 @@
             this.EmailInputPanel.ResumeLayout(false);
             this.EmailInputPanel.PerformLayout();
             this.NewContactButtonLayout.ResumeLayout(false);
+            this.NewContactButtonLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -389,5 +416,7 @@
         private System.Windows.Forms.TableLayoutPanel NewContactButtonLayout;
         private System.Windows.Forms.Button AddContactButton;
         private System.Windows.Forms.Button ResetInputButton;
+        private System.Windows.Forms.Label SuccessMessageLabel;
+        private System.Windows.Forms.Timer FadeTimer;
     }
 }

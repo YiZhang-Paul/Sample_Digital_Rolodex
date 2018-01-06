@@ -15,6 +15,7 @@ namespace DigitalRolodexClassLibrary {
             PhoneNumberValidator = phoneNumberValidator;
         }
 
+        #region Name Validations
         private bool IsValidNameLength(string name) {
 
             return name.Length >= 2 && name.Length <= 25;
@@ -31,12 +32,16 @@ namespace DigitalRolodexClassLibrary {
 
             return IsValidNameLength(name) && IsLegalNameFormat(name);
         }
+        #endregion
 
+        #region Phone Number Validations
         public bool IsValidPhoneNumber(string phoneNumber) {
 
             return PhoneNumberValidator.IsValidPhoneNumber(phoneNumber);
         }
+        #endregion
 
+        #region Email Validations
         private bool IsValidEmailFormat(string email) {
 
             return Regex.IsMatch(email, @"^\w+@\w+\.(com|org)$");
@@ -53,7 +58,9 @@ namespace DigitalRolodexClassLibrary {
 
             return IsValidEmailFormat(email) && IsValidEmailLength(email);
         }
+        #endregion
 
+        #region Address Validations
         private bool IsValidAddressLength(string address) {
 
             return address.Length >= 6 && address.Length <= 50;
@@ -70,5 +77,6 @@ namespace DigitalRolodexClassLibrary {
 
             return IsValidAddressLength(address) && IsLegalCharacters(address);
         }
+        #endregion
     }
 }

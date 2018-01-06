@@ -9,3 +9,6 @@ D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.MainForm.resou
 D:\rolodex\DigitalRolodex\DigitalRolodex\obj\Debug\DigitalRolodex.Properties.Resources.resources
 D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodexControlLibrary.dll
 D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodexControlLibrary.pdb
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\areaCode.txt
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodexClassLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodex\bin\Debug\DigitalRolodexClassLibrary.pdb
