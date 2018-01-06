@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DigitalRolodexClassLibrary;
 
 namespace DigitalRolodex {
     public partial class MainForm : Form {
 
+        private RolodexValidator Validator { get; set; }
         private Point MouseXY { get; set; }
         private bool Maximized { get { return WindowState == FormWindowState.Maximized; } }
 
         public MainForm() {
 
             InitializeComponent();
+            var phoneValidator = new PhoneNumberValidator("areaCode.txt");
+            Validator = new RolodexValidator(phoneValidator);
         }
 
         private void ShowPanel(UserControl panel) {
@@ -40,6 +44,11 @@ namespace DigitalRolodex {
                     ShowPanel(ViewContactPanel);
                     break;
             }
+        }
+
+        private void NewContactPanelOnContactAdding(object sender, EventArgs e) {
+
+            //TODO: On Contact Adding Event Handling
         }
 
         private void GetMouseXY(object sender, MouseEventArgs e) {

@@ -101,6 +101,7 @@
             this.AddressInputTextBox.Name = "AddressInputTextBox";
             this.AddressInputTextBox.Size = new System.Drawing.Size(201, 29);
             this.AddressInputTextBox.TabIndex = 2;
+            this.AddressInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // AddressInputLabel
             // 
@@ -119,11 +120,11 @@
             this.AddressValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.AddressValidationLabel.AutoSize = true;
-            this.AddressValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.AddressValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.AddressValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.AddressValidationLabel.Name = "AddressValidationLabel";
-            this.AddressValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.AddressValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.AddressValidationLabel.TabIndex = 0;
             // 
             // NameInputPanel
@@ -148,6 +149,7 @@
             this.NameInputTextBox.Name = "NameInputTextBox";
             this.NameInputTextBox.Size = new System.Drawing.Size(201, 29);
             this.NameInputTextBox.TabIndex = 2;
+            this.NameInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // NameInputLabel
             // 
@@ -166,11 +168,11 @@
             this.NameValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.NameValidationLabel.AutoSize = true;
-            this.NameValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.NameValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.NameValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.NameValidationLabel.Name = "NameValidationLabel";
-            this.NameValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.NameValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.NameValidationLabel.TabIndex = 0;
             // 
             // PhoneInputPanel
@@ -195,6 +197,7 @@
             this.PhoneInputTextBox.Name = "PhoneInputTextBox";
             this.PhoneInputTextBox.Size = new System.Drawing.Size(109, 29);
             this.PhoneInputTextBox.TabIndex = 2;
+            this.PhoneInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // PhoneInputLabel
             // 
@@ -213,11 +216,11 @@
             this.PhoneValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PhoneValidationLabel.AutoSize = true;
-            this.PhoneValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PhoneValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.PhoneValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.PhoneValidationLabel.Name = "PhoneValidationLabel";
-            this.PhoneValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.PhoneValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.PhoneValidationLabel.TabIndex = 0;
             // 
             // EmailInputPanel
@@ -242,6 +245,7 @@
             this.EmailInputTextBox.Name = "EmailInputTextBox";
             this.EmailInputTextBox.Size = new System.Drawing.Size(201, 29);
             this.EmailInputTextBox.TabIndex = 3;
+            this.EmailInputTextBox.TextChanged += new System.EventHandler(this.InputTextChanged);
             // 
             // EmailInputLabel
             // 
@@ -260,11 +264,11 @@
             this.EmailValidationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.EmailValidationLabel.AutoSize = true;
-            this.EmailValidationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailValidationLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailValidationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EmailValidationLabel.Location = new System.Drawing.Point(104, 6);
+            this.EmailValidationLabel.Location = new System.Drawing.Point(104, 11);
             this.EmailValidationLabel.Name = "EmailValidationLabel";
-            this.EmailValidationLabel.Size = new System.Drawing.Size(0, 21);
+            this.EmailValidationLabel.Size = new System.Drawing.Size(0, 17);
             this.EmailValidationLabel.TabIndex = 0;
             // 
             // NewContactButtonLayout

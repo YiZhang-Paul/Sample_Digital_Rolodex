@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace DigitalRolodexControlLibrary {
     public partial class NewContactPanel : UserControl {
@@ -15,22 +16,144 @@ namespace DigitalRolodexControlLibrary {
 
         public event ContactAddingHandler OnContactAdding;
 
+        #region Input Boxes and Validation Labels
+        private TextBoxBase[] InputBoxes { get; set; }
+        private Label[] ErrorDisplays { get; set; }
+        private Dictionary<TextBoxBase, Label> ErrorDisplayLink { get; set; }
+        #endregion
+
         #region Input Field Values
-        public string ContactName { get { return NameInputTextBox.Text; } }
-        public string PhoneNumber { get { return PhoneInputTextBox.Text; } }
-        public string Email { get { return EmailInputTextBox.Text; } }
-        public string Address { get { return AddressInputTextBox.Text; } }
+        public string[] Inputs {
+
+            get {
+
+                return new string[] {
+                
+                    NameInputTextBox.Text.Trim(),
+                    PhoneInputTextBox.Text.Trim(),
+                    EmailInputTextBox.Text.Trim(),
+                    AddressInputTextBox.Text.Trim()
+                };
+            }
+        }
         #endregion
 
         public NewContactPanel() {
 
             InitializeComponent();
+            LoadAssets();
         }
+
+        private void LoadAssets() {
+
+            InputBoxes = AddInputBoxes();
+            ErrorDisplays = AddErrorDisplays();
+            ErrorDisplayLink = LinkErrorDisplays();
+        }
+
+        #region Resources Setups and Initializations
+        private TextBoxBase[] AddInputBoxes() { 
+        
+            var textBoxes = new List<TextBoxBase>();
+            textBoxes.Add(NameInputTextBox);
+            textBoxes.Add(PhoneInputTextBox);
+            textBoxes.Add(EmailInputTextBox);
+            textBoxes.Add(AddressInputTextBox);
+
+            return textBoxes.ToArray();
+        }
+
+        private Label[] AddErrorDisplays() { 
+        
+            var displays = new List<Label>();
+            displays.Add(NameValidationLabel);
+            displays.Add(PhoneValidationLabel);
+            displays.Add(EmailValidationLabel);
+            displays.Add(AddressValidationLabel);
+
+            return displays.ToArray();
+        }
+
+        private Dictionary<TextBoxBase, Label> LinkErrorDisplays() {
+
+            var link = new Dictionary<TextBoxBase, Label>();
+
+            for(int i = 0; i < InputBoxes.Length; i++) {
+
+                link[InputBoxes[i]] = ErrorDisplays[i];
+            }
+
+            return link;
+        }
+        #endregion
+
+        private Label GetErrorDisplay(TextBoxBase textBox) { 
+        
+            if(!ErrorDisplayLink.ContainsKey(textBox)) {
+
+                return null;
+            }
+
+            return ErrorDisplayLink[textBox];
+        }
+
+        public void ShowError(Label errorDisplay, string message) {
+
+            errorDisplay.Text = message;
+        }
+
+        private void RemoveError(Label errorDisplay) {
+
+            errorDisplay.Text = string.Empty;
+        }
+
+        private bool IsEmpty(TextBoxBase textBox) { 
+        
+            if(textBox.GetType() == typeof(TextBox)) {
+
+                return textBox.Text.Trim() == string.Empty;
+            }
+
+            return !Regex.IsMatch(textBox.Text, @"\d");
+        }
+
+        private bool CheckEmptyFields() {
+
+            bool hasError = false;
+
+            foreach(var textBox in InputBoxes) {
+
+                if(IsEmpty(textBox)) {
+
+                    hasError = true;
+                    ShowError(GetErrorDisplay(textBox), "* Field Required");
+                }
+            }
+
+            return hasError;
+        }
+
+        #region Input Boxes Event Listeners
+        private void InputTextChanged(object sender, EventArgs e) {
+
+            var textBox = (TextBoxBase)sender;
+
+            if(!IsEmpty(textBox)) {
+            
+                RemoveError(GetErrorDisplay(textBox));
+            }
+        }
+        #endregion
 
         #region Add Contact Button Event Listeners
         private void AddContactButtonClick(object sender, EventArgs e) {
 
-            OnContactAdding(sender, e);
+            bool hasError = CheckEmptyFields();
+
+            if(!hasError) {
+
+                OnContactAdding(sender, e);
+            }
         }
 
         private void AddContactButtonMouseEnter(object sender, EventArgs e) {
@@ -57,10 +180,10 @@ namespace DigitalRolodexControlLibrary {
         #region Reset Input Button Event Listeners
         private void ResetInputButtonClick(object sender, EventArgs e) {
 
-            NameInputTextBox.Clear();
-            PhoneInputTextBox.Clear();
-            EmailInputTextBox.Clear();
-            AddressInputTextBox.Clear();
+            foreach(var textBox in InputBoxes) {
+
+                textBox.Clear();
+            }
         }
 
         private void ResetInputButtonMouseEnter(object sender, EventArgs e) {

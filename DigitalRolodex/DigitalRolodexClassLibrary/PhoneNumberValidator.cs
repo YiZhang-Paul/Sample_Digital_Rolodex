@@ -7,7 +7,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 
 namespace DigitalRolodexClassLibrary {
-    public class PhoneNumberValidator {
+    public class PhoneNumberValidator : IPhoneNumberValidator {
 
         private HashSet<string> AreaCodes { get; set; }
 

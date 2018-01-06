@@ -124,6 +124,10 @@
     <None Include="Resources\search1.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DigitalRolodexClassLibrary\DigitalRolodexClassLibrary.csproj">
+      <Project>{b528fe20-4088-4932-9df4-c119c2965259}</Project>
+      <Name>DigitalRolodexClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DigitalRolodexControlLibrary\DigitalRolodexControlLibrary.csproj">
       <Project>{E2771394-87CF-4ACD-B9BF-02DCA5AA0208}</Project>
       <Name>DigitalRolodexControlLibrary</Name>
