@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInputPanel.cs" />
     <Compile Include="NewContactPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,6 +65,12 @@
     </Compile>
     <Compile Include="Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateContactPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateContactPanel.Designer.cs">
+      <DependentUpon>UpdateContactPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewContactPanel.cs">
       <SubType>UserControl</SubType>
