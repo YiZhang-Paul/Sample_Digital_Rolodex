@@ -11,9 +11,11 @@ using System.Windows.Forms;
 namespace DigitalRolodexControlLibrary {
     public partial class Sidebar : UserControl {
 
+        #region Custom Events
         public delegate void OptionSelectedHandler(object sender, EventArgs e);
 
         public event OptionSelectedHandler OnOptionSelected;
+        #endregion
 
         private bool Collapsed { get; set; }
         private string[] ButtonText { get; set; }
@@ -28,20 +30,20 @@ namespace DigitalRolodexControlLibrary {
             return SidebarButtonLayout.Controls.OfType<Button>();
         }
 
-        private void ResetButtonAppearance(IEnumerable<Button> buttons, Color color) {
+        private void ResetButtonStyle(IEnumerable<Button> buttons, Color color) {
 
             foreach(Button button in buttons) {
 
                 button.BackColor = color;
-                button.Paint -= this.DrawActiveIndicator;
+                button.Paint -= this.DrawMarker;
             }
         }
 
-        private void UpdateButtonAppearance(IEnumerable<Button> buttons, Button activeButton) {
+        private void UpdateButtonStyle(IEnumerable<Button> buttons, Button activeButton) {
 
-            ResetButtonAppearance(buttons, Color.FromArgb(31, 38, 51));
+            ResetButtonStyle(buttons, Color.FromArgb(31, 38, 51));
             activeButton.BackColor = activeButton.FlatAppearance.MouseOverBackColor;
-            activeButton.Paint += this.DrawActiveIndicator;
+            activeButton.Paint += this.DrawMarker;
         }
 
         private void Collapse() {
@@ -84,17 +86,17 @@ namespace DigitalRolodexControlLibrary {
 
         private void NewContactButtonClick(object sender, EventArgs e) {
 
-            UpdateButtonAppearance(GetOptionButtons(), (Button)sender);
+            UpdateButtonStyle(GetOptionButtons(), (Button)sender);
             OnOptionSelected(sender, e);
         }
 
         private void ViewContactButtonClick(object sender, EventArgs e) {
 
-            UpdateButtonAppearance(GetOptionButtons(), (Button)sender);
+            UpdateButtonStyle(GetOptionButtons(), (Button)sender);
             OnOptionSelected(sender, e);
         }
 
-        private void DrawActiveIndicator(object sender, PaintEventArgs e) {
+        private void DrawMarker(object sender, PaintEventArgs e) {
 
             var button = (Button)sender;
             var color = Color.FromArgb(248, 251, 50);

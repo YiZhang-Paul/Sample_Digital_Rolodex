@@ -11,5 +11,7 @@ namespace DigitalRolodexClassLibrary {
         bool IsValidPhoneNumber(string phoneNumber);
         bool IsValidEmail(string email);
         bool IsValidAddress(string address);
+        bool IsValidSearchText(string searchText, string placeholder);
+        Error[] FindInputErrors(string[] inputs);
     }
 }

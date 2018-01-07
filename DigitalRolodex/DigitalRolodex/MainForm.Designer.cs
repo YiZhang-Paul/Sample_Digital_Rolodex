@@ -24,17 +24,17 @@
         /// </summary>
         private void InitializeComponent() {
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.SearchBox = new DigitalRolodexControlLibrary.SearchBox();
             this.ControlButtonLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.Sidebar = new DigitalRolodexControlLibrary.Sidebar();
             this.UIPanel = new System.Windows.Forms.Panel();
             this.UserViewLayout = new System.Windows.Forms.TableLayoutPanel();
             this.UserViewPanel = new System.Windows.Forms.Panel();
-            this.NewContactPanel = new DigitalRolodexControlLibrary.NewContactPanel();
+            this.Sidebar = new DigitalRolodexControlLibrary.Sidebar();
+            this.SearchBox = new DigitalRolodexControlLibrary.SearchBox();
             this.ViewContactPanel = new DigitalRolodexControlLibrary.ViewContactPanel();
+            this.NewContactPanel = new DigitalRolodexControlLibrary.NewContactPanel();
             this.TopPanel.SuspendLayout();
             this.ControlButtonLayout.SuspendLayout();
             this.MainLayout.SuspendLayout();
@@ -55,18 +55,8 @@
             this.TopPanel.Size = new System.Drawing.Size(540, 61);
             this.TopPanel.TabIndex = 1;
             this.TopPanel.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
-            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
+            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseLocation);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
-            // 
-            // SearchBox
-            // 
-            this.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
-            this.SearchBox.Location = new System.Drawing.Point(48, 20);
-            this.SearchBox.Margin = new System.Windows.Forms.Padding(0);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(187, 25);
-            this.SearchBox.TabIndex = 3;
             // 
             // ControlButtonLayout
             // 
@@ -87,7 +77,7 @@
             this.ControlButtonLayout.Size = new System.Drawing.Size(86, 61);
             this.ControlButtonLayout.TabIndex = 2;
             this.ControlButtonLayout.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
-            this.ControlButtonLayout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
+            this.ControlButtonLayout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseLocation);
             this.ControlButtonLayout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
             // 
             // ExitButton
@@ -146,17 +136,6 @@
             this.MainLayout.Size = new System.Drawing.Size(701, 476);
             this.MainLayout.TabIndex = 5;
             // 
-            // Sidebar
-            // 
-            this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            this.Sidebar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sidebar.Location = new System.Drawing.Point(0, 0);
-            this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
-            this.Sidebar.Name = "Sidebar";
-            this.Sidebar.Size = new System.Drawing.Size(161, 476);
-            this.Sidebar.TabIndex = 4;
-            this.Sidebar.OnOptionSelected += new DigitalRolodexControlLibrary.Sidebar.OptionSelectedHandler(this.SidebarOnOptionSelected);
-            // 
             // UIPanel
             // 
             this.UIPanel.Controls.Add(this.UserViewLayout);
@@ -184,14 +163,52 @@
             // 
             // UserViewPanel
             // 
-            this.UserViewPanel.Controls.Add(this.NewContactPanel);
             this.UserViewPanel.Controls.Add(this.ViewContactPanel);
+            this.UserViewPanel.Controls.Add(this.NewContactPanel);
             this.UserViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserViewPanel.Location = new System.Drawing.Point(0, 61);
             this.UserViewPanel.Margin = new System.Windows.Forms.Padding(0);
             this.UserViewPanel.Name = "UserViewPanel";
             this.UserViewPanel.Size = new System.Drawing.Size(540, 415);
             this.UserViewPanel.TabIndex = 2;
+            // 
+            // Sidebar
+            // 
+            this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.Sidebar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sidebar.Location = new System.Drawing.Point(0, 0);
+            this.Sidebar.Margin = new System.Windows.Forms.Padding(0);
+            this.Sidebar.Name = "Sidebar";
+            this.Sidebar.Size = new System.Drawing.Size(161, 476);
+            this.Sidebar.TabIndex = 4;
+            this.Sidebar.OnOptionSelected += new DigitalRolodexControlLibrary.Sidebar.OptionSelectedHandler(this.SidebarOnOptionSelected);
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
+            this.SearchBox.Location = new System.Drawing.Point(48, 20);
+            this.SearchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(187, 25);
+            this.SearchBox.TabIndex = 3;
+            this.SearchBox.OnSearch += new DigitalRolodexControlLibrary.SearchBox.SearchHandler(this.SearchBoxOnSearch);
+            // 
+            // ViewContactPanel
+            // 
+            this.ViewContactPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ViewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
+            this.ViewContactPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ViewContactPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewContactPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.ViewContactPanel.Location = new System.Drawing.Point(0, 0);
+            this.ViewContactPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.ViewContactPanel.Name = "ViewContactPanel";
+            this.ViewContactPanel.Size = new System.Drawing.Size(540, 415);
+            this.ViewContactPanel.TabIndex = 2;
+            this.ViewContactPanel.Visible = false;
+            this.ViewContactPanel.OnContactUpdating += new DigitalRolodexControlLibrary.ViewContactPanel.ContactUpdatingHandler(this.ViewContactPanelOnContactUpdating);
+            this.ViewContactPanel.OnContactDeleting += new DigitalRolodexControlLibrary.ViewContactPanel.ContactDeletingHandler(this.ViewContactPanelOnContactDeleting);
             // 
             // NewContactPanel
             // 
@@ -207,20 +224,6 @@
             this.NewContactPanel.TabIndex = 3;
             this.NewContactPanel.Visible = false;
             this.NewContactPanel.OnContactAdding += new DigitalRolodexControlLibrary.NewContactPanel.ContactAddingHandler(this.NewContactPanelOnContactAdding);
-            // 
-            // ViewContactPanel
-            // 
-            this.ViewContactPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ViewContactPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.ViewContactPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewContactPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewContactPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.ViewContactPanel.Location = new System.Drawing.Point(0, 0);
-            this.ViewContactPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.ViewContactPanel.Name = "ViewContactPanel";
-            this.ViewContactPanel.Size = new System.Drawing.Size(540, 415);
-            this.ViewContactPanel.TabIndex = 2;
-            this.ViewContactPanel.Visible = false;
             // 
             // MainForm
             // 

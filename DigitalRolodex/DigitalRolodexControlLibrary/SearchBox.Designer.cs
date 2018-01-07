@@ -23,9 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.SearchIconBox = new System.Windows.Forms.PictureBox();
             this.SearchBoxLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.ExpandTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SearchIconBox)).BeginInit();
             this.SearchBoxLayout.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +46,6 @@
             this.InputBox.Text = "search contact name...";
             this.InputBox.TextChanged += new System.EventHandler(this.InputBoxTextChanged);
             this.InputBox.Enter += new System.EventHandler(this.InputBoxEnter);
-            this.InputBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InputBoxKeyUp);
             this.InputBox.Leave += new System.EventHandler(this.InputBoxLeave);
             // 
             // SearchIconBox
@@ -74,6 +75,10 @@
             this.SearchBoxLayout.Size = new System.Drawing.Size(187, 25);
             this.SearchBoxLayout.TabIndex = 6;
             // 
+            // ExpandTimer
+            // 
+            this.ExpandTimer.Interval = 1;
+            // 
             // SearchBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,5 +100,6 @@
         private System.Windows.Forms.TextBox InputBox;
         private System.Windows.Forms.PictureBox SearchIconBox;
         private System.Windows.Forms.TableLayoutPanel SearchBoxLayout;
+        private System.Windows.Forms.Timer ExpandTimer;
     }
 }

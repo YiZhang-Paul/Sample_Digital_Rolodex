@@ -9,3 +9,6 @@ D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexC
 D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.csprojResolveAssemblyReference.cache
 D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.SearchBox.resources
 D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\obj\Debug\DigitalRolodexControlLibrary.Sidebar.resources
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\bin\Debug\areaCode.txt
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\bin\Debug\DigitalRolodexClassLibrary.dll
+D:\rolodex\DigitalRolodex\DigitalRolodexControlLibrary\bin\Debug\DigitalRolodexClassLibrary.pdb

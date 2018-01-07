@@ -4,3 +4,6 @@ D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexCla
 D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.dll
 D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.pdb
 D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\bin\Debug\areaCode.txt
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.Properties.Resources.resources
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\obj\Debug\DigitalRolodexClassLibrary.csproj.GenerateResource.Cache
+D:\rolodex\DigitalRolodex\DigitalRolodexClassLibrary\bin\Debug\DigitalRolodexClassLibrary.dll.config

@@ -23,11 +23,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.EditContactPanel = new System.Windows.Forms.Panel();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ContactDisplayLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ContactDisplayTable = new System.Windows.Forms.DataGridView();
+            this.EditPanelTimer = new System.Windows.Forms.Timer(this.components);
             this.EditContactPanel.SuspendLayout();
             this.ContactDisplayLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactDisplayTable)).BeginInit();
@@ -111,6 +113,8 @@
             this.ContactDisplayLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.ContactDisplayLayout.Controls.Add(this.ContactDisplayTable, 1, 1);
             this.ContactDisplayLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContactDisplayLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContactDisplayLayout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ContactDisplayLayout.Location = new System.Drawing.Point(0, 0);
             this.ContactDisplayLayout.Margin = new System.Windows.Forms.Padding(0);
             this.ContactDisplayLayout.Name = "ContactDisplayLayout";
@@ -123,15 +127,29 @@
             // 
             // ContactDisplayTable
             // 
-            this.ContactDisplayTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.ContactDisplayTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.ContactDisplayTable.AllowUserToAddRows = false;
+            this.ContactDisplayTable.AllowUserToDeleteRows = false;
+            this.ContactDisplayTable.AllowUserToResizeRows = false;
+            this.ContactDisplayTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ContactDisplayTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ContactDisplayTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ContactDisplayTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContactDisplayTable.Location = new System.Drawing.Point(43, 27);
             this.ContactDisplayTable.Margin = new System.Windows.Forms.Padding(0);
+            this.ContactDisplayTable.MultiSelect = false;
             this.ContactDisplayTable.Name = "ContactDisplayTable";
+            this.ContactDisplayTable.ReadOnly = true;
+            this.ContactDisplayTable.RowHeadersVisible = false;
+            this.ContactDisplayTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ContactDisplayTable.ShowEditingIcon = false;
             this.ContactDisplayTable.Size = new System.Drawing.Size(452, 292);
             this.ContactDisplayTable.TabIndex = 5;
+            this.ContactDisplayTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ContactDisplayTableCellMouseClick);
+            this.ContactDisplayTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ContactDisplayTableDataBindingComplete);
+            // 
+            // EditPanelTimer
+            // 
+            this.EditPanelTimer.Interval = 1;
             // 
             // ViewContactPanel
             // 
@@ -159,6 +177,7 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.TableLayoutPanel ContactDisplayLayout;
         private System.Windows.Forms.DataGridView ContactDisplayTable;
+        private System.Windows.Forms.Timer EditPanelTimer;
 
     }
 }
