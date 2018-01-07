@@ -40,7 +40,7 @@ namespace DigitalRolodexControlLibrary {
             CollapseEditPanel();
         }
 
-        private void CollapseEditPanel() {
+        public void CollapseEditPanel() {
 
             if(!EditPanelOff) {
 

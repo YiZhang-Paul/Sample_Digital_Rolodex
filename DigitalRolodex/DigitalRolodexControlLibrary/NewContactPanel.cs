@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using DigitalRolodexClassLibrary;
 
 namespace DigitalRolodexControlLibrary {
-    public partial class NewContactPanel : UserControl {
+    public partial class NewContactPanel : UserControl, IInputPanel {
         
         #region Custom Events
         public delegate void ContactAddingHandler(object sender, EventArgs e);
@@ -24,6 +24,15 @@ namespace DigitalRolodexControlLibrary {
         private TextBoxBase[] InputBoxes { get; set; }
         private Label[] ErrorDisplays { get; set; }
         private Dictionary<TextBoxBase, Label> ErrorDisplayLookup { get; set; }
+        #endregion
+
+        #region Protected Properties
+        protected Button AddButton { get { return AddContactButton; } }
+        protected Button ResetButton { get { return ResetInputButton; } }
+        protected TextBox NameInputBox { get { return NameInputTextBox; } }
+        protected MaskedTextBox PhoneInputBox { get { return PhoneInputTextBox; } }
+        protected TextBox EmailInputBox { get { return EmailInputTextBox; } }
+        protected TextBox AddressInputBox { get { return AddressInputTextBox; } }
         #endregion
 
         #region Input Field Values
