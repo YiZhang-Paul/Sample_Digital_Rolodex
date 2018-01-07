@@ -16,6 +16,8 @@ namespace DigitalRolodexControlLibrary {
         
         public event SearchHandler OnSearch;
         #endregion
+        
+        private int OriginalWidth { get; set; }
 
         #region Public Properties
         public string PlaceHolder { get; private set; }
@@ -55,19 +57,27 @@ namespace DigitalRolodexControlLibrary {
             InputBox.BackColor = backColor;
         }
 
+        private void StartExpand() {
+
+            OriginalWidth = this.Width;
+            ExpandTimer.Tick += this.BoxExpanding;
+            ExpandTimer.Start();
+        }
+
         private void ExpandSearchBox() {
 
             SearchIconBox.Visible = false;
             PlaceHolder = InputBox.Text;
             InputBox.Clear();
-            this.Width *= 2;
+            StartExpand();
         }
 
         private void ShrinkSearchBox() {
 
             SearchIconBox.Visible = true;
             InputBox.Text = PlaceHolder;
-            this.Width /= 2;
+            ExpandTimer.Tick -= this.BoxExpanding;
+            this.Width = OriginalWidth;
         }
         #endregion
 
@@ -81,7 +91,6 @@ namespace DigitalRolodexControlLibrary {
 
             ExpandSearchBox();
             SetBoxStyle(SystemColors.ControlText, SystemColors.ControlDarkDark);
-            AddSearchIcon();
         }
 
         private void InputBoxLeave(object sender, EventArgs e) {
@@ -89,6 +98,19 @@ namespace DigitalRolodexControlLibrary {
             ShrinkSearchBox();
             SetBoxStyle(SystemColors.ControlDarkDark, Color.DarkGray);
             RemoveSearchIcon();
+        }
+
+        private void BoxExpanding(object sender, EventArgs e) {
+
+            int maxWidth = OriginalWidth * 2;
+            this.Width = Math.Min(maxWidth, this.Width + 20);
+
+            if(this.Width == maxWidth) {
+
+                ExpandTimer.Tick -= this.BoxExpanding;
+                ExpandTimer.Stop();
+                AddSearchIcon();
+            }
         }
         #endregion
     }

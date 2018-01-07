@@ -162,8 +162,8 @@ namespace DigitalRolodexControlLibrary {
 
         private void StartFadeOut() {
 
-            this.FadeTimer.Tick += this.FadeOut;
-            this.FadeTimer.Start();
+            FadeTimer.Tick += this.FadeOut;
+            FadeTimer.Start();
         }
 
         #region Text Fade Event Listeners
