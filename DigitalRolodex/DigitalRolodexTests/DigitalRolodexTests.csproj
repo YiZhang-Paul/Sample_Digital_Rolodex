@@ -69,6 +69,7 @@
     <Compile Include="PhoneNumberValidatorTest.cs" />
     <Compile Include="ContactTest.cs" />
     <Compile Include="TextBoxValidatorTest.cs" />
+    <Compile Include="ErrorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

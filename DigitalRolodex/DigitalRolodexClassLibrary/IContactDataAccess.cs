@@ -8,8 +8,6 @@ using System.Data;
 namespace DigitalRolodexClassLibrary {
     public interface IContactDataAccess {
 
-        //TODO: Double Check
-
         DataSet Retrieve();
         DataSet Retrieve(string name);
         void Insert(IContact contact);

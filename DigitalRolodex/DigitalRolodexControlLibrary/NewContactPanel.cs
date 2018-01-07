@@ -19,7 +19,7 @@ namespace DigitalRolodexControlLibrary {
         public event ContactAddingHandler OnContactAdding;
         #endregion
 
-        #region Input Boxes and Validations
+        #region Private Properties
         private ITextBoxValidator Validator { get; set; }
         private TextBoxBase[] InputBoxes { get; set; }
         private Label[] ErrorDisplays { get; set; }
@@ -48,7 +48,7 @@ namespace DigitalRolodexControlLibrary {
             LoadAssets();
         }
 
-        public void InjectValidator(ITextBoxValidator validator) {
+        public void InjectService(ITextBoxValidator validator) {
 
             Validator = validator;
         }
@@ -142,14 +142,14 @@ namespace DigitalRolodexControlLibrary {
             }
         }
 
-        public void ShowInvalidFields(string[] errors) { 
+        public void ShowInvalidFields(IError[] errors) { 
         
-            foreach(string error in errors) {
+            foreach(var error in errors) {
 
-                if(error == "name") SetError(NameInputTextBox, "* Invalid Name (Length: 2-25)");
-                else if(error == "phone") SetError(PhoneInputTextBox, "* Invalid Phone Number");
-                else if(error == "email") SetError(EmailInputTextBox, "* Invalid Email (xxx@example.com)");
-                else if(error == "address") SetError(AddressInputTextBox, "* Invalid Address (Length: 6-50)");
+                if(error.Type == "name") SetError(NameInputTextBox, error.Message);
+                else if(error.Type == "phone") SetError(PhoneInputTextBox, error.Message);
+                else if(error.Type == "email") SetError(EmailInputTextBox, error.Message);
+                else if(error.Type == "address") SetError(AddressInputTextBox, error.Message);
             }
         }
         #endregion

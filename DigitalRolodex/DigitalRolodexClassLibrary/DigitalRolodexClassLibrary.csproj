@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="Contact.cs" />
     <Compile Include="ContactDataAccess.cs" />
+    <Compile Include="Error.cs" />
     <Compile Include="IContact.cs" />
     <Compile Include="IContactDataAccess.cs" />
+    <Compile Include="IError.cs" />
     <Compile Include="IPhoneNumberValidator.cs" />
     <Compile Include="IRolodexValidator.cs" />
     <Compile Include="ITextBoxValidator.cs" />

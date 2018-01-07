@@ -8,11 +8,29 @@ using System.Text.RegularExpressions;
 namespace DigitalRolodexClassLibrary {
     public class RolodexValidator : IRolodexValidator {
 
+        private Dictionary<string, string> _errorMessages = new Dictionary<string, string>() {
+            //error types and corresponding messages
+            {"name", "* Invalid Name (Length: 2-25)"},
+            {"phone", "* Invalid Phone Number"},
+            {"email", "* Invalid Email (xxx@example.com)"},
+            {"address", "* Invalid Address (Length: 6-50)"}
+        };
+
         private IPhoneNumberValidator PhoneNumberValidator { get; set; }
 
         public RolodexValidator(IPhoneNumberValidator phoneNumberValidator) {
 
             PhoneNumberValidator = phoneNumberValidator;
+        }
+
+        private Error GetError(string type) {
+        
+            if(!_errorMessages.ContainsKey(type)) {
+            
+                return null;
+            }
+
+            return new Error(type, _errorMessages[type]);
         }
 
         #region Name Validations
@@ -87,5 +105,17 @@ namespace DigitalRolodexClassLibrary {
             return searchText != string.Empty && searchText != placeholder;
         }
         #endregion
+
+        public Error[] FindInputErrors(string[] inputs) {
+
+            var errors = new List<Error>();
+
+            if(!IsValidName(inputs[0])) errors.Add(GetError("name"));
+            if(!IsValidPhoneNumber(inputs[1])) errors.Add(GetError("phone"));
+            if(!IsValidEmail(inputs[2])) errors.Add(GetError("email"));
+            if(!IsValidAddress(inputs[3])) errors.Add(GetError("address"));
+
+            return errors.ToArray();
+        }
     }
 }

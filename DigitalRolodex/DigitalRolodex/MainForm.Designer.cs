@@ -55,7 +55,7 @@
             this.TopPanel.Size = new System.Drawing.Size(540, 61);
             this.TopPanel.TabIndex = 1;
             this.TopPanel.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
-            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
+            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseLocation);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
             // 
             // ControlButtonLayout
@@ -77,7 +77,7 @@
             this.ControlButtonLayout.Size = new System.Drawing.Size(86, 61);
             this.ControlButtonLayout.TabIndex = 2;
             this.ControlButtonLayout.DoubleClick += new System.EventHandler(this.ToggleWindowSize);
-            this.ControlButtonLayout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseXY);
+            this.ControlButtonLayout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GetMouseLocation);
             this.ControlButtonLayout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragWindow);
             // 
             // ExitButton

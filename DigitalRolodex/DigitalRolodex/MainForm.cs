@@ -12,32 +12,25 @@ using DigitalRolodexClassLibrary;
 namespace DigitalRolodex {
     public partial class MainForm : Form {
 
-        //TODO: Refactor
         private IContactDataAccess DataAccess { get; set; }
-        private DataSet Contacts { get; set; }
-
-
-
         private RolodexValidator Validator { get; set; }
+        private DataSet Contacts { get; set; }
         private Point MouseXY { get; set; }
         private bool Maximized { get { return WindowState == FormWindowState.Maximized; } }
 
         public MainForm() {
 
             InitializeComponent();
-            var phoneValidator = new PhoneNumberValidator("areaCode.txt");
-            Validator = new RolodexValidator(phoneValidator);
-            NewContactPanel.InjectValidator(new TextBoxValidator());
-
-            //TODO: Refactor
-            DataAccess = new ContactDataAccess();
-            LoadContacts();
+            NewContactPanel.InjectService(new TextBoxValidator());
+            LoadAssets();
+            LoadContact();
         }
 
-        private void LoadContacts() {
+        private void LoadAssets() {
 
-            Contacts = DataAccess.Retrieve();
-            ViewContactPanel.ShowContacts(Contacts);
+            DataAccess = new ContactDataAccess();
+            var phoneValidator = new PhoneNumberValidator("areaCode.txt");
+            Validator = new RolodexValidator(phoneValidator);
         }
 
         private void ShowPanel(UserControl panel) {
@@ -46,25 +39,27 @@ namespace DigitalRolodex {
             panel.BringToFront();
         }
 
-        private string[] CheckInputErrors(string[] inputs) {
+        private Contact CreateContact() {
 
-            var errors = new List<string>();
+            string name = NewContactPanel.Inputs[0];
+            string phone = NewContactPanel.Inputs[1];
+            string email = NewContactPanel.Inputs[2];
+            string address = NewContactPanel.Inputs[3];
 
-            if(!Validator.IsValidName(inputs[0])) errors.Add("name");
-            if(!Validator.IsValidPhoneNumber(inputs[1])) errors.Add("phone");
-            if(!Validator.IsValidEmail(inputs[2])) errors.Add("email");
-            if(!Validator.IsValidAddress(inputs[3])) errors.Add("address");
-
-            return errors.ToArray();
+            return new Contact(name, phone, email, address);
         }
 
-        private void AddContact() { 
-        
-            //TODO: not yet implemented
+        #region CRUD Operations Handler
+        private void AddContact() {
 
-            var inputs = NewContactPanel.Inputs;
-            DataAccess.Insert(new Contact(inputs[0], inputs[1], inputs[2], inputs[3]));
-            LoadContacts();
+            DataAccess.Insert(CreateContact());
+            LoadContact();
+        }
+
+        private void LoadContact() {
+
+            Contacts = DataAccess.Retrieve();
+            ViewContactPanel.ShowContacts(Contacts);
         }
 
         private void UpdateContact() {
@@ -74,32 +69,23 @@ namespace DigitalRolodex {
 
         private void DeleteContact() {
 
-            //TODO: not yet implemented
-
             DataAccess.Delete(ViewContactPanel.SelectedID);
-            LoadContacts();
+            LoadContact();
         }
+        #endregion
 
-        #region Event Listeners
+        #region User Control Event Listeners
         private void SidebarOnOptionSelected(object sender, EventArgs e) {
 
-            switch(((Button)sender).Tag.ToString()) {
-            
-                case "newContact" :
+            string tag = ((Button)sender).Tag.ToString();
 
-                    ShowPanel(NewContactPanel);
-                    break;
-
-                case "viewContact" :
-
-                    ShowPanel(ViewContactPanel);
-                    break;
-            }
+            if(tag == "newContact") ShowPanel(NewContactPanel);
+            else if(tag == "viewContact") ShowPanel(ViewContactPanel);
         }
 
         private void NewContactPanelOnContactAdding(object sender, EventArgs e) {
 
-            var errors = CheckInputErrors(NewContactPanel.Inputs);
+            var errors = Validator.FindInputErrors(NewContactPanel.Inputs);
 
             if(errors.Length > 0) {
 
@@ -127,8 +113,10 @@ namespace DigitalRolodex {
 
             //TODO: not yet implemented
         }
+        #endregion
 
-        private void GetMouseXY(object sender, MouseEventArgs e) {
+        #region Basic UI Control Event Listeners
+        private void GetMouseLocation(object sender, MouseEventArgs e) {
 
             MouseXY = e.Location;
         }
@@ -140,16 +128,6 @@ namespace DigitalRolodex {
                 Top += e.Y - MouseXY.Y;
                 Left += e.X - MouseXY.X;
             }
-        }
-
-        private void ToggleWindowSize(object sender, EventArgs e) {
-
-            WindowState = Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
-        }
-
-        private void MinimizeButtonClick(object sender, EventArgs e) {
-
-            WindowState = FormWindowState.Minimized;
         }
 
         private void MinimizeButtonMouseEnter(object sender, EventArgs e) {
@@ -165,6 +143,16 @@ namespace DigitalRolodex {
         private void ButtonMouseLeave(object sender, EventArgs e) {
 
             ((Button)sender).ForeColor = SystemColors.ControlDark;
+        }
+
+        private void ToggleWindowSize(object sender, EventArgs e) {
+
+            WindowState = Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
+        }
+
+        private void MinimizeButtonClick(object sender, EventArgs e) {
+
+            WindowState = FormWindowState.Minimized;
         }
 
         private void ExitButtonClick(object sender, EventArgs e) {

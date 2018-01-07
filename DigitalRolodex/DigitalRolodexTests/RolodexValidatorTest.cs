@@ -170,5 +170,27 @@ namespace DigitalRolodexTests {
 
             Assert.IsTrue(rolodexValidator.IsValidSearchText(searchText, placeholder));
         }
+
+        [TestMethod]
+        public void HasInputErrors() {
+
+            string[] inputs = { "", "", "", "" };
+            var errors = rolodexValidator.FindInputErrors(inputs);
+
+            Assert.AreEqual(4, errors.Length);
+            Assert.AreEqual("email", errors[2].Type);
+        }
+
+        [TestMethod]
+        public void HasNoInputError() {
+
+            phoneNumberValidator.Setup(mock => mock.IsValidPhoneNumber(It.IsAny<string>()))
+                                .Returns(true);
+
+            string[] inputs = { "name", "(647)123-1122", "xxx@xxx.com", "xxxxx dr." };
+            var errors = rolodexValidator.FindInputErrors(inputs);
+
+            Assert.AreEqual(0, errors.Length);
+        }
     }
 }
