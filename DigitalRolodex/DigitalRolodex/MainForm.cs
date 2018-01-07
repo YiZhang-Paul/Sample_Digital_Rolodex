@@ -12,11 +12,13 @@ using DigitalRolodexClassLibrary;
 namespace DigitalRolodex {
     public partial class MainForm : Form {
 
+        #region Private Fields
         private IContactDataAccess DataAccess { get; set; }
         private RolodexValidator Validator { get; set; }
         private DataSet Contacts { get; set; }
         private Point MouseXY { get; set; }
         private bool Maximized { get { return WindowState == FormWindowState.Maximized; } }
+        #endregion
 
         public MainForm() {
 

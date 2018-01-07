@@ -37,12 +37,6 @@ namespace DigitalRolodexControlLibrary {
 
             InitializeComponent();
             ContactDisplayTable.AutoGenerateColumns = true;
-            Reset();
-        }
-
-        private void Reset() {
-
-            ContactDisplayTable.ClearSelection();
             CollapseEditPanel();
         }
 
@@ -55,12 +49,17 @@ namespace DigitalRolodexControlLibrary {
             }
         }
 
+        private void StartExpand() {
+
+            EditPanelTimer.Tick += this.PanelExpanding;
+            EditPanelTimer.Start();
+        }
+
         private void ExpandEditPanel() {
 
             if(EditPanelOff) {
-            
-                EditContactPanel.Height = (int)(this.Height * 0.2);
-                EditPanelOff = !EditPanelOff;
+
+                StartExpand();
             }
         }
 
@@ -80,6 +79,7 @@ namespace DigitalRolodexControlLibrary {
         private void DeleteButtonClick(object sender, EventArgs e) {
 
             OnContactDeleting(sender, e);
+            CollapseEditPanel();
         }
 
         private void ButtonMouseEnter(object sender, EventArgs e) {
@@ -106,13 +106,29 @@ namespace DigitalRolodexControlLibrary {
         #region Contact Display Table Event Listeners
         private void ContactDisplayTableDataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e) {
 
-            Reset();
+            ContactDisplayTable.ClearSelection();
         }
 
-        private void ContactDisplayTableRowEnter(object sender, DataGridViewCellEventArgs e) {
+        private void ContactDisplayTableCellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
 
-            ExpandEditPanel();
+            if(ContactDisplayTable.SelectedRows.Count == 1) {
+
+                ExpandEditPanel();
+            }
         }
         #endregion
+
+        private void PanelExpanding(object sender, EventArgs e) {
+
+            int maxHeight = (int)(this.Height * 0.2);
+            EditContactPanel.Height = Math.Min(maxHeight, EditContactPanel.Height + 10);
+
+            if(EditContactPanel.Height == maxHeight) {
+
+                EditPanelTimer.Tick -= this.PanelExpanding;
+                EditPanelTimer.Stop();
+                EditPanelOff = !EditPanelOff;
+            }
+        }
     }
 }

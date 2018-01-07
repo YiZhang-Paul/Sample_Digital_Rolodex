@@ -23,11 +23,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.EditContactPanel = new System.Windows.Forms.Panel();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ContactDisplayLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ContactDisplayTable = new System.Windows.Forms.DataGridView();
+            this.EditPanelTimer = new System.Windows.Forms.Timer(this.components);
             this.EditContactPanel.SuspendLayout();
             this.ContactDisplayLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactDisplayTable)).BeginInit();
@@ -142,8 +144,12 @@
             this.ContactDisplayTable.ShowEditingIcon = false;
             this.ContactDisplayTable.Size = new System.Drawing.Size(452, 292);
             this.ContactDisplayTable.TabIndex = 5;
+            this.ContactDisplayTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ContactDisplayTableCellMouseClick);
             this.ContactDisplayTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ContactDisplayTableDataBindingComplete);
-            this.ContactDisplayTable.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ContactDisplayTableRowEnter);
+            // 
+            // EditPanelTimer
+            // 
+            this.EditPanelTimer.Interval = 1;
             // 
             // ViewContactPanel
             // 
@@ -171,6 +177,7 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.TableLayoutPanel ContactDisplayLayout;
         private System.Windows.Forms.DataGridView ContactDisplayTable;
+        private System.Windows.Forms.Timer EditPanelTimer;
 
     }
 }
