@@ -11,26 +11,23 @@ using System.Windows.Forms;
 namespace DigitalRolodexControlLibrary {
     public partial class SearchBox : UserControl {
 
+        #region Custom Events
         public delegate void SearchHandler(object sender, EventArgs e);
         
         public event SearchHandler OnSearch;
+        #endregion
 
-        private string PlaceHolder { get; set; }
-
+        #region Public Properties
+        public string PlaceHolder { get; private set; }
         public string SearchText { get { return InputBox.Text; } }
+        #endregion
 
         public SearchBox() {
 
             InitializeComponent();
         }
 
-        private bool IsValidSearchText() {
-
-            string text = InputBox.Text.Trim();
-
-            return text != string.Empty && text != PlaceHolder;
-        }
-
+        #region Search Box Styles and Appearances
         private void AddSearchIcon() {
 
             var icon = new Label();
@@ -52,41 +49,45 @@ namespace DigitalRolodexControlLibrary {
             }
         }
 
-        #region Search Box Event Listeners
-        private void InputBoxKeyUp(object sender, KeyEventArgs e) {
-            //search when enter key is pressed
-            if(e.KeyValue == 13 && IsValidSearchText()) {
+        private void SetBoxStyle(Color foreColor, Color backColor) {
 
-                OnSearch(sender, e);
-            }
+            InputBox.ForeColor = foreColor;
+            InputBox.BackColor = backColor;
         }
 
-        private void InputBoxTextChanged(object sender, EventArgs e) {
-
-            if(IsValidSearchText()) {
-
-                OnSearch(sender, e);
-            }
-        }
-
-        private void InputBoxEnter(object sender, EventArgs e) {
+        private void ExpandSearchBox() {
 
             SearchIconBox.Visible = false;
             PlaceHolder = InputBox.Text;
             InputBox.Clear();
-            InputBox.ForeColor = SystemColors.ControlText;
-            InputBox.BackColor = SystemColors.ControlDarkDark;
             this.Width *= 2;
+        }
+
+        private void ShrinkSearchBox() {
+
+            SearchIconBox.Visible = true;
+            InputBox.Text = PlaceHolder;
+            this.Width /= 2;
+        }
+        #endregion
+
+        #region Search Box Event Listeners
+        private void InputBoxTextChanged(object sender, EventArgs e) {
+
+            OnSearch(sender, e);
+        }
+
+        private void InputBoxEnter(object sender, EventArgs e) {
+
+            ExpandSearchBox();
+            SetBoxStyle(SystemColors.ControlText, SystemColors.ControlDarkDark);
             AddSearchIcon();
         }
 
         private void InputBoxLeave(object sender, EventArgs e) {
 
-            SearchIconBox.Visible = true;
-            InputBox.Text = PlaceHolder;
-            InputBox.ForeColor = SystemColors.ControlDarkDark;
-            InputBox.BackColor = Color.DarkGray;
-            this.Width /= 2;
+            ShrinkSearchBox();
+            SetBoxStyle(SystemColors.ControlDarkDark, Color.DarkGray);
             RemoveSearchIcon();
         }
         #endregion

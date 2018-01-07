@@ -1,0 +1,17 @@
+{
+  "TestRunner": "",
+  "TestPlatform": "x86",
+  "TestApartmentState": "STA",
+  "TestAdapterMode": "Integrated",
+  "IsRedirectingFrameworkAssemblies": true,
+  "TestSettings": "",
+  "ExcludeAttributes": "System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute",
+  "ExcludeFiles": "*.Designer.cs",
+  "ExcludeDirectories": "",
+  "Filters": "+[*]*",
+  "IsIncludingSolutionAssemblies": true,
+  "IsExcludingTestAssemblies": true,
+  "IsCoveringByTest": false,
+  "IsMergingByHash": true,
+  "IsSkippingAutoProps": true
+}

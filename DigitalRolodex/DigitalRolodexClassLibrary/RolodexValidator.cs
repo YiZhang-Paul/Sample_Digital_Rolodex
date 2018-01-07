@@ -78,5 +78,14 @@ namespace DigitalRolodexClassLibrary {
             return IsValidAddressLength(address) && IsLegalCharacters(address);
         }
         #endregion
+
+        #region Search Box Validations
+        public bool IsValidSearchText(string searchText, string placeholder) {
+
+            searchText = searchText.Trim();
+
+            return searchText != string.Empty && searchText != placeholder;
+        }
+        #endregion
     }
 }

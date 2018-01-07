@@ -44,7 +44,6 @@
             this.InputBox.Text = "search contact name...";
             this.InputBox.TextChanged += new System.EventHandler(this.InputBoxTextChanged);
             this.InputBox.Enter += new System.EventHandler(this.InputBoxEnter);
-            this.InputBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InputBoxKeyUp);
             this.InputBox.Leave += new System.EventHandler(this.InputBoxLeave);
             // 
             // SearchIconBox

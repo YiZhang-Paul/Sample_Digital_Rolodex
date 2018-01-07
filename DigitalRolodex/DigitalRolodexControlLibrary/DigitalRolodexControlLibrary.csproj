@@ -136,6 +136,12 @@
   <ItemGroup>
     <None Include="Resources\menu_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalRolodexClassLibrary\DigitalRolodexClassLibrary.csproj">
+      <Project>{b528fe20-4088-4932-9df4-c119c2965259}</Project>
+      <Name>DigitalRolodexClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

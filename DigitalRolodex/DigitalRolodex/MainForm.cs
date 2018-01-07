@@ -12,6 +12,12 @@ using DigitalRolodexClassLibrary;
 namespace DigitalRolodex {
     public partial class MainForm : Form {
 
+        //TODO: Refactor
+        private IContactDataAccess DataAccess { get; set; }
+        private DataSet Contacts { get; set; }
+
+
+
         private RolodexValidator Validator { get; set; }
         private Point MouseXY { get; set; }
         private bool Maximized { get { return WindowState == FormWindowState.Maximized; } }
@@ -21,6 +27,17 @@ namespace DigitalRolodex {
             InitializeComponent();
             var phoneValidator = new PhoneNumberValidator("areaCode.txt");
             Validator = new RolodexValidator(phoneValidator);
+            NewContactPanel.InjectValidator(new TextBoxValidator());
+
+            //TODO: Refactor
+            DataAccess = new ContactDataAccess();
+            LoadContacts();
+        }
+
+        private void LoadContacts() {
+
+            Contacts = DataAccess.Retrieve();
+            ViewContactPanel.ShowContacts(Contacts);
         }
 
         private void ShowPanel(UserControl panel) {
@@ -41,9 +58,26 @@ namespace DigitalRolodex {
             return errors.ToArray();
         }
 
-        private void AddContact(string[] inputs) { 
+        private void AddContact() { 
         
             //TODO: not yet implemented
+
+            var inputs = NewContactPanel.Inputs;
+            DataAccess.Insert(new Contact(inputs[0], inputs[1], inputs[2], inputs[3]));
+            LoadContacts();
+        }
+
+        private void UpdateContact() {
+
+            //TODO: not yet implemented
+        }
+
+        private void DeleteContact() {
+
+            //TODO: not yet implemented
+
+            DataAccess.Delete(ViewContactPanel.SelectedID);
+            LoadContacts();
         }
 
         #region Event Listeners
@@ -69,14 +103,29 @@ namespace DigitalRolodex {
 
             if(errors.Length > 0) {
 
-                NewContactPanel.ShowErrors(errors);
+                NewContactPanel.ShowInvalidFields(errors);
             }
             else {
 
-                AddContact(NewContactPanel.Inputs);
+                AddContact();
                 NewContactPanel.ShowSuccessMessage();
                 NewContactPanel.Reset();
             }
+        }
+
+        private void ViewContactPanelOnContactUpdating(object sender, EventArgs e) {
+
+            UpdateContact();
+        }
+
+        private void ViewContactPanelOnContactDeleting(object sender, EventArgs e) {
+
+            DeleteContact();
+        }
+
+        private void SearchBoxOnSearch(object sender, EventArgs e) {
+
+            //TODO: not yet implemented
         }
 
         private void GetMouseXY(object sender, MouseEventArgs e) {

@@ -143,5 +143,32 @@ namespace DigitalRolodexTests {
             Assert.IsTrue(rolodexValidator.IsValidEmail("xx_x@example.org"));
             Assert.IsTrue(rolodexValidator.IsValidEmail("xxxxx@xx.com"));
         }
+
+        [TestMethod]
+        public void IsEmptySearchText() {
+
+            string searchText = string.Empty;
+            string placeholder = "some text";
+
+            Assert.IsFalse(rolodexValidator.IsValidSearchText(searchText, placeholder));
+        }
+
+        [TestMethod]
+        public void SearchTextIsPlaceholder() {
+
+            string placeholder = "some text";
+            string searchText = placeholder;
+
+            Assert.IsFalse(rolodexValidator.IsValidSearchText(searchText, placeholder));
+        }
+
+        [TestMethod]
+        public void ValidSearchText() {
+
+            string searchText = "some text";
+            string placeholder = "everything but placeholder";
+
+            Assert.IsTrue(rolodexValidator.IsValidSearchText(searchText, placeholder));
+        }
     }
 }

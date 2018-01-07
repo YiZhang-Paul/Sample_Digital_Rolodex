@@ -11,28 +11,64 @@ using System.Windows.Forms;
 namespace DigitalRolodexControlLibrary {
     public partial class ViewContactPanel : UserControl {
 
+        #region Custom Events
         public delegate void ContactUpdatingHandler(object sender, EventArgs e);
         public delegate void ContactDeletingHandler(object sender, EventArgs e);
 
         public event ContactUpdatingHandler OnContactUpdating;
         public event ContactDeletingHandler OnContactDeleting;
+        #endregion
 
-        private bool EditPanelOn { get; set; }
-        
+        private bool EditPanelOff { get; set; }
+
+        #region Public Properties
+        public int SelectedID {
+
+            get {
+
+                var idCell = ContactDisplayTable.SelectedRows[0].Cells[0];
+
+                return int.Parse(idCell.FormattedValue.ToString());
+            }
+        }
+        #endregion
+
         public ViewContactPanel() {
 
             InitializeComponent();
+            ContactDisplayTable.AutoGenerateColumns = true;
+            Reset();
+        }
+
+        private void Reset() {
+
+            ContactDisplayTable.ClearSelection();
             CollapseEditPanel();
         }
 
-        public void CollapseEditPanel() {
+        private void CollapseEditPanel() {
 
-            EditContactPanel.Height = 0;
+            if(!EditPanelOff) {
+
+                EditContactPanel.Height = 0;
+                EditPanelOff = !EditPanelOff;
+            }
         }
 
-        public void ExpandEditPanel() {
+        private void ExpandEditPanel() {
 
-            EditContactPanel.Height = (int)(this.Height * 0.2);
+            if(EditPanelOff) {
+            
+                EditContactPanel.Height = (int)(this.Height * 0.2);
+                EditPanelOff = !EditPanelOff;
+            }
+        }
+
+        public void ShowContacts(DataSet contacts) {
+
+            ContactDisplayTable.DataSource = contacts;
+            ContactDisplayTable.DataMember = "Contact";
+            ContactDisplayTable.Columns["id"].Visible = false;
         }
 
         #region Button Event Listeners
@@ -64,6 +100,18 @@ namespace DigitalRolodexControlLibrary {
         private void ButtonMouseUp(object sender, MouseEventArgs e) {
 
             ((Button)sender).ForeColor = Color.Red;
+        }
+        #endregion
+
+        #region Contact Display Table Event Listeners
+        private void ContactDisplayTableDataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e) {
+
+            Reset();
+        }
+
+        private void ContactDisplayTableRowEnter(object sender, DataGridViewCellEventArgs e) {
+
+            ExpandEditPanel();
         }
         #endregion
     }

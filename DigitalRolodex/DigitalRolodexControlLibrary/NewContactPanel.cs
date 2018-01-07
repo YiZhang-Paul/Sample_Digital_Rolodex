@@ -8,18 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using DigitalRolodexClassLibrary;
 
 namespace DigitalRolodexControlLibrary {
     public partial class NewContactPanel : UserControl {
-
+        
+        #region Custom Events
         public delegate void ContactAddingHandler(object sender, EventArgs e);
 
         public event ContactAddingHandler OnContactAdding;
+        #endregion
 
-        #region Input Boxes and Validation Labels
+        #region Input Boxes and Validations
+        private ITextBoxValidator Validator { get; set; }
         private TextBoxBase[] InputBoxes { get; set; }
         private Label[] ErrorDisplays { get; set; }
-        private Dictionary<TextBoxBase, Label> ErrorDisplayLink { get; set; }
+        private Dictionary<TextBoxBase, Label> ErrorDisplayLookup { get; set; }
         #endregion
 
         #region Input Field Values
@@ -44,11 +48,9 @@ namespace DigitalRolodexControlLibrary {
             LoadAssets();
         }
 
-        private void LoadAssets() {
+        public void InjectValidator(ITextBoxValidator validator) {
 
-            InputBoxes = AddInputBoxes();
-            ErrorDisplays = AddErrorDisplays();
-            ErrorDisplayLink = LinkErrorDisplays();
+            Validator = validator;
         }
 
         public void Reset() {
@@ -61,6 +63,13 @@ namespace DigitalRolodexControlLibrary {
         }
 
         #region Resources Setups and Initializations
+        private void LoadAssets() {
+
+            InputBoxes = AddInputBoxes();
+            ErrorDisplays = AddErrorDisplays();
+            ErrorDisplayLookup = LinkErrorDisplays();
+        }
+
         private TextBoxBase[] AddInputBoxes() { 
         
             var textBoxes = new List<TextBoxBase>();
@@ -99,73 +108,49 @@ namespace DigitalRolodexControlLibrary {
         #region Handle Error Display
         private Label GetErrorDisplay(TextBoxBase textBox) { 
         
-            if(!ErrorDisplayLink.ContainsKey(textBox)) {
+            if(!ErrorDisplayLookup.ContainsKey(textBox)) {
 
                 return null;
             }
 
-            return ErrorDisplayLink[textBox];
+            return ErrorDisplayLookup[textBox];
         }
 
-        private void ShowError(Label errorDisplay, string message) {
+        private void SetError(TextBoxBase textBox, string message) {
 
-            errorDisplay.Text = message;
+            var errorDisplay = GetErrorDisplay(textBox);
+
+            if(errorDisplay != null) {
+
+                errorDisplay.Text = message;
+            }
         }
 
-        private void RemoveError(Label errorDisplay) {
+        private void RemoveError(TextBoxBase textBox) {
 
-            errorDisplay.Text = string.Empty;
+            SetError(textBox, string.Empty);
         }
 
-        public void ShowErrors(string[] errors) { 
+        private void ShowEmptyFields() { 
+        
+            foreach(var textBox in InputBoxes) {
+            
+                if(Validator.IsEmpty(textBox)) {
+
+                    SetError(textBox, "* Field Required.");
+                }
+            }
+        }
+
+        public void ShowInvalidFields(string[] errors) { 
         
             foreach(string error in errors) {
 
-                if(error == "name") {
-
-                    ShowError(GetErrorDisplay(NameInputTextBox), "* Invalid Name (Length: 2-25)");
-                }
-                else if(error == "phone") {
-
-                    ShowError(GetErrorDisplay(PhoneInputTextBox), "* Invalid Phone Number");
-                }
-                else if(error == "email") {
-
-                    ShowError(GetErrorDisplay(EmailInputTextBox), "* Invalid Email (xxx@example.com)");
-                }
-                else if(error == "address") {
-
-                    ShowError(GetErrorDisplay(AddressInputTextBox), "* Invalid Address (Length: 6-50)");
-                }
+                if(error == "name") SetError(NameInputTextBox, "* Invalid Name (Length: 2-25)");
+                else if(error == "phone") SetError(PhoneInputTextBox, "* Invalid Phone Number");
+                else if(error == "email") SetError(EmailInputTextBox, "* Invalid Email (xxx@example.com)");
+                else if(error == "address") SetError(AddressInputTextBox, "* Invalid Address (Length: 6-50)");
             }
-        }
-        #endregion
-
-        #region Check for Empty Fields
-        private bool IsEmpty(TextBoxBase textBox) { 
-        
-            if(textBox.GetType() == typeof(TextBox)) {
-
-                return textBox.Text.Trim() == string.Empty;
-            }
-
-            return !Regex.IsMatch(textBox.Text, @"\d");
-        }
-
-        private bool CheckEmptyFields() {
-
-            bool hasError = false;
-
-            foreach(var textBox in InputBoxes) {
-
-                if(IsEmpty(textBox)) {
-
-                    hasError = true;
-                    ShowError(GetErrorDisplay(textBox), "* Field Required");
-                }
-            }
-
-            return hasError;
         }
         #endregion
 
@@ -203,9 +188,9 @@ namespace DigitalRolodexControlLibrary {
 
             var textBox = (TextBoxBase)sender;
 
-            if(!IsEmpty(textBox)) {
+            if(!Validator.IsEmpty(textBox)) {
             
-                RemoveError(GetErrorDisplay(textBox));
+                RemoveError(textBox);
             }
         }
         #endregion
@@ -213,9 +198,11 @@ namespace DigitalRolodexControlLibrary {
         #region Add Contact Button Event Listeners
         private void AddContactButtonClick(object sender, EventArgs e) {
 
-            bool hasError = CheckEmptyFields();
+            if(Validator.HasEmptyField(InputBoxes)) {
 
-            if(!hasError) {
+                ShowEmptyFields();
+            }
+            else {
 
                 OnContactAdding(sender, e);
             }
