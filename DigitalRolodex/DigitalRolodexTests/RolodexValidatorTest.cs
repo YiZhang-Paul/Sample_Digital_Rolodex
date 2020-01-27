@@ -7,6 +7,7 @@ namespace DigitalRolodexTests {
     [TestClass]
     public class RolodexValidatorTest {
 
+
         Mock<IPhoneNumberValidator> phoneNumberValidator;
         RolodexValidator rolodexValidator;
 
