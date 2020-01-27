@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DigitalRolodexClassLibrary;
 using Moq;
@@ -6,7 +6,6 @@ using Moq;
 namespace DigitalRolodexTests {
     [TestClass]
     public class RolodexValidatorTest {
-
 
         Mock<IPhoneNumberValidator> phoneNumberValidator;
         RolodexValidator rolodexValidator;
