@@ -5,7 +5,6 @@ using DigitalRolodexClassLibrary;
 namespace DigitalRolodexTests {
     [TestClass]
     public class ErrorTest {
-
         Error error;
 
         [TestMethod]
